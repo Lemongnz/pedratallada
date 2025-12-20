@@ -33,7 +33,7 @@ const localizePath = (path: string) => {
 		<header class="bg-stone-100/90 backdrop-blur-sm border-b border-stone-200 sticky top-0 z-50 transition-all duration-300">
 			<div class="container mx-auto px-4 h-24 flex items-center justify-between relative">
 				<!-- Mobile Menu Button (Left) -->
-				<button id="menu-toggle" class="min-[1285px]:hidden p-2 text-stone-600 hover:text-clay-dark focus:outline-none z-20" aria-label="Abrir menú">
+				<button id="menu-toggle" class="min-[1400px]:hidden p-2 text-stone-600 hover:text-clay-dark focus:outline-none z-20" aria-label="Abrir menú">
 					<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
 					</svg>
@@ -51,7 +51,7 @@ const localizePath = (path: string) => {
 					/>
 				</a>
 
-				<div class="flex-1 hidden min-[1285px]:flex justify-end gap-6 items-center">
+				<div class="flex-1 hidden min-[1400px]:flex justify-end gap-6 items-center">
 					<nav class="flex gap-6 items-center">
 						<a href={localizePath('/proyectos/educacion')} class="text-stone-600 hover:text-clay-dark font-medium transition-colors text-base lg:text-lg">{t('nav.education')}</a>
 						<a href={localizePath('/proyectos/campamento-arqueologia')} class="text-stone-600 hover:text-clay-dark font-medium transition-colors text-base lg:text-lg">{t('nav.camping')}</a>
@@ -63,7 +63,7 @@ const localizePath = (path: string) => {
 			</div>
 
 			<!-- Mobile Menu Panel -->
-			<div id="mobile-menu" class="hidden min-[1285px]:hidden bg-stone-100 border-t border-stone-200 absolute w-full left-0 top-24 z-40">
+			<div id="mobile-menu" class="hidden min-[1400px]:hidden bg-stone-100 border-t border-stone-200 absolute w-full left-0 top-24 z-40">
 				<nav class="flex flex-col p-4 gap-4 text-center">
 					<a href={localizePath('/proyectos/educacion')} class="text-stone-600 hover:text-clay-dark font-medium py-2 text-lg">{t('nav.education')}</a>
 					<a href={localizePath('/proyectos/campamento-arqueologia')} class="text-stone-600 hover:text-clay-dark font-medium py-2 text-lg">{t('nav.camping')}</a>

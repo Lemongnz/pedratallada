@@ -27,6 +27,13 @@ export const ui = {
     'hero.desc': 'Desde la arqueología científica hasta la divulgación educativa. Talleres, excursiones y experiencias para entender nuestros orígenes.',
     'hero.cta_projects': 'Ver Actividades',
     'hero.cta_contact': 'Contactar',
+    // Project Cards
+    'project.educacion.title': 'Educación y Divulgación',
+    'project.educacion.desc': 'Nuestro taller de PREHISTORIA para colegios e institutos tiene como objetivo enseñar al alumnado los conocimientos más destacados de la arqueología prehistórica.',
+    'project.campamento-arqueologia.title': 'Campamento Arqueología',
+    'project.campamento-arqueologia.desc': 'Pedra Tallada realiza todos los veranos el CAMPAMENTO de ARQUEO-ESTIU en la finca Santa Bárbara, Altea la Vieja.',
+    'project.museos.title': 'Museos y Patrimonio',
+    'project.museos.desc': 'Llevamos la arqueología fuera de los laboratorios y excavaciones, acercándola al público a través de la divulgación científica y la arqueología experimental.',
   },
   en: {
     'nav.home': 'Home',
@@ -48,6 +55,13 @@ export const ui = {
     'hero.desc': 'From scientific archaeology to educational outreach. Workshops, excursions, and experiences to understand our origins.',
     'hero.cta_projects': 'View Activities',
     'hero.cta_contact': 'Contact Us',
+     // Project Cards
+    'project.educacion.title': 'Education & Outreach',
+    'project.educacion.desc': 'Our PREHISTORY workshop for schools aims to teach students the most outstanding knowledge of prehistoric archaeology.',
+    'project.campamento-arqueologia.title': 'Archaeology Camp',
+    'project.campamento-arqueologia.desc': 'Pedra Tallada organizes the ARQUEO-ESTIU CAMP every summer at the Santa Bárbara estate, Altea la Vieja.',
+    'project.museos.title': 'Museums & Heritage',
+    'project.museos.desc': 'We take archaeology out of laboratories and excavations, bringing it closer to the public through scientific outreach and experimental archaeology.',
   },
   ca: {
     'nav.home': 'Inici',
@@ -69,5 +83,12 @@ export const ui = {
     'hero.desc': 'Des de l\'arqueologia científica fins a la divulgació educativa. Tallers, excursions i experiències per entendre els nostres orígens.',
     'hero.cta_projects': 'Veure Activitats',
     'hero.cta_contact': 'Contactar',
+     // Project Cards
+    'project.educacion.title': 'Educació i Divulgació',
+    'project.educacion.desc': 'El nostre taller de PREHISTÒRIA per a escoles i instituts té com a objectiu ensenyar l\'alumnat els coneixements més destacats de l\'arqueologia prehistòrica.',
+    'project.campamento-arqueologia.title': 'Campament Arqueologia',
+    'project.campamento-arqueologia.desc': 'Pedra Tallada realitza tots els estius el CAMPAMENT d\'ARQUEO-ESTIU a la finca Santa Bàrbara, Altea la Vella.',
+    'project.museos.title': 'Museus i Patrimoni',
+    'project.museos.desc': 'Portem l\'arqueologia fora dels laboratoris i excavacions, apropant-la al públic a través de la divulgació científica i l\'arqueologia experimental.',
   },
 } as const;
