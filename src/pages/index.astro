@@ -31,7 +31,7 @@ const recentProjects = projects.slice(0, 3);
 				Desde la arqueología científica hasta la divulgación educativa. Talleres, excursiones y experiencias para entender nuestros orígenes.
 			</p>
 			<div class="flex flex-col sm:flex-row gap-4 justify-center w-full sm:w-auto">
-				<a href="/proyectos" class="inline-block bg-clay-dark text-white px-8 py-3 rounded-full font-semibold hover:bg-clay transition-all duration-300 shadow-lg shadow-clay/20 transform hover:-translate-y-1">
+				<a href="/proyectos/educacion" class="inline-block bg-clay-dark text-white px-8 py-3 rounded-full font-semibold hover:bg-clay transition-all duration-300 shadow-lg shadow-clay/20 transform hover:-translate-y-1">
 					Ver Actividades
 				</a>
 				<a href="/contacto" class="inline-block bg-stone-100/90 backdrop-blur-sm text-stone-900 px-8 py-3 rounded-full font-semibold hover:bg-white transition-all duration-300 transform hover:-translate-y-1">
@@ -48,8 +48,8 @@ const recentProjects = projects.slice(0, 3);
 				<h2 class="text-3xl font-serif text-stone-900 mb-2">Actividades Destacadas</h2>
 				<p class="text-stone-500 text-sm md:text-base">Nuestra selección de experiencias educativas y culturales</p>
 			</div>
-			<a href="/proyectos" class="text-clay-dark hover:text-clay font-medium text-sm hidden md:flex items-center gap-1 transition-colors">
-				Ver todas <span class="text-lg">→</span>
+			<a href="/proyectos/educacion" class="text-clay-dark hover:text-clay font-medium text-sm hidden md:flex items-center gap-1 transition-colors">
+				Ver Educación <span class="text-lg">→</span>
 			</a>
 		</div>
 		
@@ -84,7 +84,7 @@ const recentProjects = projects.slice(0, 3);
 						</p>
 						<div class="pt-4 border-t border-stone-100 flex justify-between items-center mt-auto">
 							<span class="text-xs font-medium text-stone-400 bg-stone-50 px-2 py-1 rounded">{project.date}</span>
-							<a href={`/proyectos#${project.id}`} class="text-stone-900 font-bold text-sm hover:text-clay-dark transition-colors">
+							<a href={`/proyectos/${project.id}`} class="text-stone-900 font-bold text-sm hover:text-clay-dark transition-colors">
 								Más información
 							</a>
 						</div>
@@ -94,8 +94,8 @@ const recentProjects = projects.slice(0, 3);
 		</div>
 		
 		<div class="mt-8 text-center md:hidden">
-			<a href="/proyectos" class="inline-flex items-center gap-2 text-clay-dark hover:text-clay font-bold text-sm bg-stone-50 px-6 py-3 rounded-full">
-				Ver todas las actividades <span>→</span>
+			<a href="/proyectos/educacion" class="inline-flex items-center gap-2 text-clay-dark hover:text-clay font-bold text-sm bg-stone-50 px-6 py-3 rounded-full">
+				Ver Actividades <span>→</span>
 			</a>
 		</div>
 	</section>

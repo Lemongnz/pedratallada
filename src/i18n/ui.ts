@@ -9,7 +9,9 @@ export const defaultLang = 'es';
 export const ui = {
   es: {
     'nav.home': 'Inicio',
-    'nav.projects': 'Proyectos',
+    'nav.education': 'Educación',
+    'nav.camping': 'Campamento',
+    'nav.museums': 'Museos',
     'nav.blog': 'Bitácora',
     'nav.contact': 'Contacto',
     'footer.about': 'Acerca de nosotros',
@@ -28,7 +30,9 @@ export const ui = {
   },
   en: {
     'nav.home': 'Home',
-    'nav.projects': 'Projects',
+    'nav.education': 'Education',
+    'nav.camping': 'Arch-Camp',
+    'nav.museums': 'Museums',
     'nav.blog': 'Blog',
     'nav.contact': 'Contact',
     'footer.about': 'About Us',
@@ -47,7 +51,9 @@ export const ui = {
   },
   ca: {
     'nav.home': 'Inici',
-    'nav.projects': 'Projectes',
+    'nav.education': 'Educació',
+    'nav.camping': 'Campament',
+    'nav.museums': 'Museus',
     'nav.blog': 'Bitàcola',
     'nav.contact': 'Contacte',
     'footer.about': 'Sobre nosaltres',

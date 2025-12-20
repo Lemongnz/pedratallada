@@ -39,12 +39,7 @@ const localizePath = (path: string) => {
 					</svg>
 				</button>
                 
-                <!-- Mobile Language (visible only on mobile/tablet, absolutely positioned right) -->
-                <div class="min-[1285px]:hidden absolute right-4 top-1/2 -translate-y-1/2 z-20">
-                     <LanguagePicker />
-                </div>
-
-				<!-- Logo (Center) -->
+                <!-- Logo (Center) -->
 				<a href={localizePath('/')} class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 flex items-center gap-3 group z-10 w-fit">
 					<Image 
 						src={logoImg} 
@@ -57,11 +52,11 @@ const localizePath = (path: string) => {
 				</a>
 
 				<div class="flex-1 hidden min-[1285px]:flex justify-end gap-6 items-center">
-					<nav class="flex gap-8 items-center">
-						<a href={localizePath('/')} class="text-stone-600 hover:text-clay-dark font-medium transition-colors text-lg">{t('nav.home')}</a>
-						<a href={localizePath('/proyectos')} class="text-stone-600 hover:text-clay-dark font-medium transition-colors text-lg">{t('nav.projects')}</a>
-						<a href={localizePath('/blog')} class="text-stone-600 hover:text-clay-dark font-medium transition-colors text-lg">{t('nav.blog')}</a>
-						<a href={localizePath('/contacto')} class="text-stone-600 hover:text-clay-dark font-medium transition-colors text-lg">{t('nav.contact')}</a>
+					<nav class="flex gap-6 items-center">
+						<a href={localizePath('/proyectos/educacion')} class="text-stone-600 hover:text-clay-dark font-medium transition-colors text-base lg:text-lg">{t('nav.education')}</a>
+						<a href={localizePath('/proyectos/campamento-arqueologia')} class="text-stone-600 hover:text-clay-dark font-medium transition-colors text-base lg:text-lg">{t('nav.camping')}</a>
+						<a href={localizePath('/proyectos/museos')} class="text-stone-600 hover:text-clay-dark font-medium transition-colors text-base lg:text-lg">{t('nav.museums')}</a>
+						<a href={localizePath('/contacto')} class="text-stone-600 hover:text-clay-dark font-medium transition-colors text-base lg:text-lg">{t('nav.contact')}</a>
 					</nav>
                     <LanguagePicker />
 				</div>
@@ -70,10 +65,13 @@ const localizePath = (path: string) => {
 			<!-- Mobile Menu Panel -->
 			<div id="mobile-menu" class="hidden min-[1285px]:hidden bg-stone-100 border-t border-stone-200 absolute w-full left-0 top-24 z-40">
 				<nav class="flex flex-col p-4 gap-4 text-center">
-					<a href={localizePath('/')} class="text-stone-600 hover:text-clay-dark font-medium py-2 text-lg">{t('nav.home')}</a>
-					<a href={localizePath('/proyectos')} class="text-stone-600 hover:text-clay-dark font-medium py-2 text-lg">{t('nav.projects')}</a>
-					<a href={localizePath('/blog')} class="text-stone-600 hover:text-clay-dark font-medium py-2 text-lg">{t('nav.blog')}</a>
+					<a href={localizePath('/proyectos/educacion')} class="text-stone-600 hover:text-clay-dark font-medium py-2 text-lg">{t('nav.education')}</a>
+					<a href={localizePath('/proyectos/campamento-arqueologia')} class="text-stone-600 hover:text-clay-dark font-medium py-2 text-lg">{t('nav.camping')}</a>
+					<a href={localizePath('/proyectos/museos')} class="text-stone-600 hover:text-clay-dark font-medium py-2 text-lg">{t('nav.museums')}</a>
 					<a href={localizePath('/contacto')} class="text-stone-600 hover:text-clay-dark font-medium py-2 text-lg">{t('nav.contact')}</a>
+                    <div class="pt-4 border-t border-stone-200 w-full flex justify-center">
+                        <LanguagePicker />
+                    </div>
 				</nav>
 			</div>
 		</header>
