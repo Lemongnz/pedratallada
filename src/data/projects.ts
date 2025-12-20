@@ -1,13 +1,15 @@
-import educacionBanner from '../assets/images/educacion-banner.jpg';
-import museosBanner from '../assets/images/scraped/foto-museos.png';
-import campamentoBanner from '../assets/images/scraped/WhatsApp-Image-2024-01-03-at-00.07.25-2.jpeg';
+import educationCard from '../assets/images/education_card.jpeg';
+import headBone from '../assets/images/head_bone.jpeg';
+import archCamp from '../assets/images/arch_camp.webp';
+
+
 
 export const projects = [
   {
     id: 'educacion',
     title: 'Talleres Educativos',
     description: 'Nuestro taller de PREHISTORIA para colegios e institutos tiene como objetivo enseñar al alumnado los conocimientos más destacados de la arqueología prehistórica.',
-    image: educacionBanner,
+    image: educationCard,
     tags: ['Educación', 'Talleres', 'Escolar'],
     date: 'En curso',
     content: `
@@ -90,7 +92,7 @@ export const projects = [
     id: 'campamento-arqueologia',
     title: 'Campamento Arqueología',
     description: 'Pedra Tallada realiza todos los veranos el CAMPAMENTO de ARQUEO-ESTIU en la finca Santa Bárbara, Altea la Vieja.',
-    image: campamentoBanner,
+    image: archCamp,
     tags: ['Verano', 'Campamento', 'Exterior'],
     date: 'Julio (Anual)',
     content: `
@@ -147,7 +149,7 @@ export const projects = [
     id: 'museos',
     title: 'Museos y Patrimonio',
     description: 'Llevamos la arqueología fuera de los laboratorios y excavaciones, acercándola al público a través de la divulgación científica y la arqueología experimental.',
-    image: museosBanner,
+    image: headBone,
     tags: ['Museos', 'Patrimonio', 'Consultoría'],
     date: 'Permanente',
     content: `
