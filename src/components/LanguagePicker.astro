@@ -1,0 +1,108 @@
+---
+import { languages } from '../i18n/ui';
+import { getLangFromUrl, getRouteFromUrl } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const route = getRouteFromUrl(Astro.url);
+
+// Generate a random ID to ensure uniqueness if used multiple times
+const uid = Math.random().toString(36).slice(2, 11);
+const btnId = `lang-btn-${uid}`;
+const menuId = `lang-menu-${uid}`;
+
+// Helper to clean up double slashes if any
+const cleanPath = (path: string) => path.replace(/\/+/g, '/');
+---
+
+<div class="relative inline-block text-left relative-group z-50">
+  <button 
+    type="button" 
+    class="inline-flex justify-center w-full rounded-md border border-stone-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-stone-700 hover:bg-stone-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-clay" 
+    id={btnId} 
+    aria-expanded="false" 
+    aria-haspopup="true"
+    data-menu-id={menuId}
+  >
+    {languages[lang].toUpperCase()}
+    <svg class="-mr-1 ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+    </svg>
+  </button>
+
+  <div 
+    class="origin-top-right absolute right-0 mt-2 w-32 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none hidden transition-all duration-200 z-50" 
+    role="menu" 
+    aria-orientation="vertical" 
+    aria-labelledby={btnId} 
+    id={menuId}
+    tabindex="-1"
+  >
+    <div class="py-1" role="none">
+      {Object.entries(languages).map(([label, name]) => {
+          let href;
+          if (label === 'es') {
+             href = `/${route ? route : ''}`;
+          } else {
+             href = `/${label}/${route ? route : ''}`;
+          }
+          href = cleanPath(href);
+          
+          return (
+            <a href={href} class={`block px-4 py-2 text-sm ${lang === label ? 'bg-stone-100 text-stone-900 font-bold' : 'text-stone-700 hover:bg-stone-50 hover:text-stone-900'}`} role="menuitem">
+                {name}
+            </a>
+          )
+      })}
+    </div>
+  </div>
+</div>
+
+<script>
+  // Simple vanilla JS to handle dropdowns
+  function setupDropdowns() {
+    const buttons = document.querySelectorAll('[id^="lang-btn-"]');
+    
+    buttons.forEach(btn => {
+      // Remove old listeners to avoid duplicates if re-running
+      const newBtn = btn.cloneNode(true);
+      btn.parentNode.replaceChild(newBtn, btn);
+      
+      const menuId = newBtn.getAttribute('data-menu-id');
+      const menu = document.getElementById(menuId);
+      
+      if (!menu) return;
+
+      newBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isExpanded = newBtn.getAttribute('aria-expanded') === 'true';
+        
+        // Close all other menus first
+        document.querySelectorAll('[id^="lang-menu-"]').forEach(m => {
+             if (m.id !== menuId) m.classList.add('hidden');
+        });
+        document.querySelectorAll('[id^="lang-btn-"]').forEach(b => {
+             if (b.id !== newBtn.id) b.setAttribute('aria-expanded', 'false');
+        });
+
+        // Toggle current
+        if (isExpanded) {
+          menu.classList.add('hidden');
+          newBtn.setAttribute('aria-expanded', 'false');
+        } else {
+          menu.classList.remove('hidden');
+          newBtn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+
+    // Close on click outside
+    document.addEventListener('click', () => {
+       document.querySelectorAll('[id^="lang-menu-"]').forEach(m => m.classList.add('hidden'));
+       document.querySelectorAll('[id^="lang-btn-"]').forEach(b => b.setAttribute('aria-expanded', 'false'));
+    });
+  }
+
+  // Run on load and if using View Transitions (astro:page-load)
+  setupDropdowns();
+  document.addEventListener('astro:page-load', setupDropdowns);
+</script>

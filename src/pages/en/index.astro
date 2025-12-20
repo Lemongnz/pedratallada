@@ -1,0 +1,120 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import { projects } from '../../data/projects';
+import heroBg from '../../assets/images/background-hero.jpg';
+import { useTranslations } from '../../i18n/utils';
+
+// Get just the first 3 projects for the home page. 
+// Ideally we should translate projects data first, but for now we keep it as is or use a translation layer.
+const recentProjects = projects.slice(0, 3);
+const t = useTranslations('en');
+---
+
+<Layout
+	title="Anthropos | Prehistory and Outreach"
+	description="Discover the past through workshops, excursions and professional archaeological education."
+>
+	<!-- Hero Section -->
+	<section class="relative mb-16 md:mb-24 rounded-3xl overflow-hidden aspect-[4/5] md:aspect-[21/9] flex items-center justify-center">
+		<Image 
+			src={heroBg} 
+			alt="Archaeology Background" 
+			class="absolute inset-0 w-full h-full object-cover z-0"
+			quality={80}
+			format="webp"
+			loading="eager"
+		/>
+		<div class="absolute inset-0 bg-stone-900/60 z-10 p-8 flex flex-col items-center justify-center text-center">
+			<span class="text-clay-light font-bold tracking-widest text-sm uppercase mb-4 animate-fade-in">{t('hero.subtitle')}</span>
+			<h1 class="text-4xl md:text-6xl lg:text-7xl font-serif text-stone-50 mb-6 leading-tight max-w-4xl">
+				{t('hero.title_part1')} <br class="hidden md:block"/> <span class="text-clay-light italic">{t('hero.title_part2')}</span>
+			</h1>
+			<p class="text-lg md:text-xl text-stone-200 mb-10 max-w-2xl mx-auto leading-relaxed">
+				{t('hero.desc')}
+			</p>
+			<div class="flex flex-col sm:flex-row gap-4 justify-center w-full sm:w-auto">
+				<a href="/en/proyectos" class="inline-block bg-clay-dark text-white px-8 py-3 rounded-full font-semibold hover:bg-clay transition-all duration-300 shadow-lg shadow-clay/20 transform hover:-translate-y-1">
+					{t('hero.cta_projects')}
+				</a>
+				<a href="/en/contacto" class="inline-block bg-stone-100/90 backdrop-blur-sm text-stone-900 px-8 py-3 rounded-full font-semibold hover:bg-white transition-all duration-300 transform hover:-translate-y-1">
+					{t('hero.cta_contact')}
+				</a>
+			</div>
+		</div>
+	</section>
+
+	<!-- Featured Grid -->
+	<section id="proyectos" class="mb-16">
+		<div class="flex justify-between items-end mb-8">
+			<div>
+				<h2 class="text-3xl font-serif text-stone-900 mb-2">Featured Activities</h2>
+				<p class="text-stone-500 text-sm md:text-base">Our selection of educational and cultural experiences</p>
+			</div>
+			<a href="/en/proyectos" class="text-clay-dark hover:text-clay font-medium text-sm hidden md:flex items-center gap-1 transition-colors">
+				{t('projects.see_all')} <span class="text-lg">→</span>
+			</a>
+		</div>
+		
+		<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+			{recentProjects.map((project) => (
+				<article class="bg-white rounded-xl overflow-hidden border border-stone-100 shadow-sm hover:shadow-xl hover:shadow-stone-200/50 transition-all duration-300 group flex flex-col h-full">
+					<div class="relative overflow-hidden aspect-video">
+						<Image 
+							src={project.image} 
+							alt={project.title}
+							class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+							width={600}
+							height={400}
+							format="webp"
+							quality={80}
+						/>
+						<div class="absolute top-4 left-4 flex gap-2">
+							{project.tags.map(tag => (
+								<span class="text-xs font-bold text-stone-800 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full shadow-sm">
+									{tag}
+								</span>
+							))}
+						</div>
+					</div>
+					
+					<div class="p-6 flex flex-col flex-1">
+						<h3 class="text-xl font-serif font-bold text-stone-900 mb-3 group-hover:text-clay-dark transition-colors">
+							{project.title}
+						</h3>
+						<p class="text-stone-600 mb-6 text-sm leading-relaxed line-clamp-3 flex-grow">
+							{project.description}
+						</p>
+						<div class="pt-4 border-t border-stone-100 flex justify-between items-center mt-auto">
+							<span class="text-xs font-medium text-stone-400 bg-stone-50 px-2 py-1 rounded">{project.date}</span>
+							<a href={`/en/proyectos/${project.id}`} class="text-stone-900 font-bold text-sm hover:text-clay-dark transition-colors">
+								{t('projects.read_more')}
+							</a>
+						</div>
+					</div>
+				</article>
+			))}
+		</div>
+		
+		<div class="mt-8 text-center md:hidden">
+			<a href="/en/proyectos" class="inline-flex items-center gap-2 text-clay-dark hover:text-clay font-bold text-sm bg-stone-50 px-6 py-3 rounded-full">
+				{t('projects.see_all')} <span>→</span>
+			</a>
+		</div>
+	</section>
+
+	<!-- Call to Action -->
+	<section class="bg-stone-900 rounded-3xl p-8 md:p-12 text-center text-stone-100 mb-16 relative overflow-hidden isolate">
+		<!-- Abstract decorative shape -->
+		<div class="absolute top-0 right-0 -mt-20 -mr-20 w-80 h-80 bg-clay-dark/20 rounded-full blur-3xl -z-10"></div>
+		<div class="absolute bottom-0 left-0 -mb-20 -ml-20 w-80 h-80 bg-moss-dark/20 rounded-full blur-3xl -z-10"></div>
+		
+		<h2 class="text-3xl md:text-4xl font-serif mb-6">Do you want to organize a workshop or excursion?</h2>
+		<p class="text-stone-300 max-w-2xl mx-auto mb-8 text-lg">
+			We adapt our activities for schools, private groups, and town halls. Experience prehistory first hand.
+		</p>
+		<a href="/en/contacto" class="inline-block bg-white text-stone-900 px-8 py-3 rounded-full font-bold hover:bg-stone-200 transition-colors">
+			Request a Quote
+		</a>
+	</section>
+</Layout>
