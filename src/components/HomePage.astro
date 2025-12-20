@@ -97,7 +97,24 @@ const recentProjects = projects.slice(0, 3);
 				{t('hero.cta_projects')} <span>→</span>
 			</a>
 		</div>
+			</a>
+		</div>
 	</section>
+
+    <!-- Collaborators Section -->
+    <section class="mb-16 md:mb-24">
+        <div class="text-center mb-10">
+            <h2 class="text-2xl md:text-3xl font-serif text-stone-900 mb-2">{t('collaborators.title')}</h2>
+            <div class="h-1 w-20 bg-clay-dark mx-auto rounded-full"></div>
+        </div>
+        
+        <div class="flex flex-wrap justify-center items-center gap-12 md:gap-20 opacity-80 grayscale hover:grayscale-0 transition-all duration-500">
+             <img src="/src/assets/images/logo_altea.png" alt="Ayuntamiento de Altea" class="h-16 md:h-20 w-auto object-contain" />
+             <img src="/src/assets/images/logo_uv.png" alt="Universidad de Valencia" class="h-16 md:h-20 w-auto object-contain" />
+             <!-- Placeholder or if download works -->
+             <img src="/src/assets/images/logo_museo_prehistoria.png" alt="Museo de Prehistoria de Valencia" class="h-16 md:h-20 w-auto object-contain" />
+        </div>
+    </section>
 
 	<!-- Call to Action -->
 	<section class="bg-stone-900 rounded-3xl p-8 md:p-12 text-center text-stone-100 mb-16 relative overflow-hidden isolate">

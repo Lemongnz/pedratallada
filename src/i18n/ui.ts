@@ -34,6 +34,7 @@ export const ui = {
     'project.campamento-arqueologia.desc': 'Pedra Tallada realiza todos los veranos el CAMPAMENTO de ARQUEO-ESTIU en la finca Santa Bárbara, Altea la Vieja.',
     'project.museos.title': 'Museos y Patrimonio',
     'project.museos.desc': 'Llevamos la arqueología fuera de los laboratorios y excavaciones, acercándola al público a través de la divulgación científica y la arqueología experimental.',
+    'collaborators.title': 'Colaboran con nosotros',
   },
   en: {
     'nav.home': 'Home',
@@ -62,6 +63,7 @@ export const ui = {
     'project.campamento-arqueologia.desc': 'Pedra Tallada organizes the ARQUEO-ESTIU CAMP every summer at the Santa Bárbara estate, Altea la Vieja.',
     'project.museos.title': 'Museums & Heritage',
     'project.museos.desc': 'We take archaeology out of laboratories and excavations, bringing it closer to the public through scientific outreach and experimental archaeology.',
+    'collaborators.title': 'Our Partners',
   },
   ca: {
     'nav.home': 'Inici',
@@ -90,5 +92,6 @@ export const ui = {
     'project.campamento-arqueologia.desc': 'Pedra Tallada realitza tots els estius el CAMPAMENT d\'ARQUEO-ESTIU a la finca Santa Bàrbara, Altea la Vella.',
     'project.museos.title': 'Museus i Patrimoni',
     'project.museos.desc': 'Portem l\'arqueologia fora dels laboratoris i excavacions, apropant-la al públic a través de la divulgació científica i l\'arqueologia experimental.',
+    'collaborators.title': 'Col·laboren amb nosaltres',
   },
 } as const;
