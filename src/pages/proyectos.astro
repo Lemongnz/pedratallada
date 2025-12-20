@@ -1,0 +1,66 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import { projects } from '../data/projects';
+import heroBg from '../assets/images/educacion-banner.jpg'; // Using distinct hero for this page if possible
+---
+
+<Layout
+	title="Proyectos y Actividades | Anthropos"
+	description="Explora nuestras actividades de arqueología, talleres educativos y rutas históricas."
+>
+    <!-- Page Header -->
+    <header class="py-12 md:py-20 text-center max-w-4xl mx-auto px-4">
+        <span class="text-clay font-bold tracking-widest text-xs md:text-sm uppercase mb-3 block">Nuestro Trabajo</span>
+        <h1 class="text-4xl md:text-6xl font-serif text-stone-900 mb-6">Proyectos y Actividades</h1>
+        <p class="text-lg text-stone-600 max-w-2xl mx-auto">
+            Desde la excavación científica hasta el aula escolar. Descubre cómo llevamos el pasado al presente.
+        </p>
+    </header>
+
+    <!-- Projects List -->
+    <section class="space-y-24 mb-24">
+        {projects.map((project, index) => (
+            <article id={project.id} class={`flex flex-col ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} gap-8 md:gap-16 items-center`}>
+                <div class="w-full md:w-1/2">
+                    <div class="relative rounded-2xl overflow-hidden shadow-xl shadow-stone-200/50 aspect-[4/3] group">
+                        <Image 
+                            src={project.image} 
+                            alt={project.title}
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                            width={800}
+                        />
+                         <div class="absolute inset-0 bg-gradient-to-t from-stone-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                            <span class="text-white font-medium">Ver galería detallada</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="w-full md:w-1/2 space-y-6">
+                    <div class="flex gap-2">
+                        {project.tags.map(tag => (
+                            <span class="text-xs font-bold text-clay-dark bg-clay-light/20 px-3 py-1 rounded-full">
+                                {tag}
+                            </span>
+                        ))}
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-serif text-stone-900">
+                        {project.title}
+                    </h2>
+                    <p class="text-stone-600 text-lg leading-relaxed">
+                        {project.description}
+                    </p>
+                    <div class="flex flex-col gap-4 text-sm text-stone-500 border-l-2 border-stone-200 pl-4">
+                        <p><strong class="text-stone-800">Fecha:</strong> {project.date}</p>
+                        <p><strong class="text-stone-800">Categoría:</strong> {project.tags.join(', ')}</p>
+                    </div>
+                    <div class="pt-4">
+                        <button class="bg-stone-900 text-white px-6 py-3 rounded-lg font-medium hover:bg-stone-800 transition-colors">
+                            Ver detalles del proyecto
+                        </button>
+                    </div>
+                </div>
+            </article>
+        ))}
+    </section>
+</Layout>

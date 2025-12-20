@@ -1,0 +1,65 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import blogHero from '../assets/images/generic-archaeology.webp';
+
+const posts = [
+  {
+    title: "El hallazgo de la cueva sur",
+    excerpt: "Descubrimos nuevas pinturas rupestres en la zona norte de la provincia.",
+    date: "12 Dic 2024",
+    readTime: "5 min",
+    category: "Descubrimientos"
+  },
+  {
+    title: "Técnicas de datación moderna",
+    excerpt: "Cómo el Carbono-14 sigue siendo relevante junto a nuevas tecnologías láser.",
+    date: "28 Nov 2024",
+    readTime: "8 min",
+    category: "Tecnología"
+  },
+  {
+    title: "Vida cotidiana en el Neolítico",
+    excerpt: "Reconstruyendo la dieta y costumbres a partir de restos cerámicos.",
+    date: "15 Oct 2024",
+    readTime: "6 min",
+    category: "Historia"
+  }
+];
+---
+
+<Layout
+	title="Bitácora | Anthropos"
+	description="Artículos y novedades sobre nuestros descubrimientos y el mundo de la arqueología."
+>
+    <div class="relative mb-16 rounded-3xl overflow-hidden h-64 md:h-80">
+        <Image 
+            src={blogHero} 
+            alt="Arqueología Trabajo de Campo" 
+            class="w-full h-full object-cover"
+        />
+        <div class="absolute inset-0 bg-stone-900/50 flex items-center justify-center">
+            <h1 class="text-4xl md:text-5xl font-serif text-white font-bold">Bitácora de Campo</h1>
+        </div>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {posts.map(post => (
+            <article class="bg-white p-8 rounded-xl border border-stone-100 hover:border-clay/30 transition-colors shadow-sm">
+                <div class="flex justify-between items-center mb-4 text-xs text-stone-500 uppercase tracking-widest">
+                    <span>{post.category}</span>
+                    <span>{post.readTime}</span>
+                </div>
+                <h2 class="text-2xl font-serif font-bold text-stone-800 mb-4 hover:text-clay-dark cursor-pointer">
+                    {post.title}
+                </h2>
+                <p class="text-stone-600 mb-6 leading-relaxed">
+                    {post.excerpt}
+                </p>
+                <div class="text-sm text-stone-400">
+                    Publicado el {post.date}
+                </div>
+            </article>
+        ))}
+    </div>
+</Layout>
