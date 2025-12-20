@@ -5,7 +5,7 @@ import campamentoBanner from '../assets/images/scraped/WhatsApp-Image-2024-01-03
 export const projects = [
   {
     id: 'educacion',
-    title: 'Educación y Divulgación',
+    title: 'Talleres Educativos',
     description: 'Nuestro taller de PREHISTORIA para colegios e institutos tiene como objetivo enseñar al alumnado los conocimientos más destacados de la arqueología prehistórica.',
     image: educacionBanner,
     tags: ['Educación', 'Talleres', 'Escolar'],
