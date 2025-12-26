@@ -15,8 +15,6 @@ export async function getStaticPaths() {
     const slugWithExt = slugParts.join('/');
     const slug = slugWithExt.replace(/\.[^/.]+$/, "");
     
-    console.log(`[DEBUG] Generating localized path: lang=${lang}, slug=${slug}, originalId=${project.id}`);
-    
     return {
       params: { lang, slug },
       props: { project, lang },

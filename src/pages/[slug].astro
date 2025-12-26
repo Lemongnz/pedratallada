@@ -8,8 +8,6 @@ export async function getStaticPaths() {
   // Spanish projects have IDs like 'educacion', 'museos' (no '/')
   const esProjects = projects.filter(p => !p.id.includes('/'));
   
-  console.log('DEBUG: esProjects sample:', esProjects.map(p => ({ id: p.id, slug: p.slug })));
-
   return esProjects.map(project => ({
     params: { slug: project.slug }, // Trying project.slug instead of project.id
     props: { project },
