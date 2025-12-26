@@ -6,12 +6,14 @@ import '../styles/global.css';
 import { getLangFromUrl, useTranslations } from '../i18n/utils';
 import LanguagePicker from '../components/LanguagePicker.astro';
 
+
 interface Props {
 	title: string;
 	description: string;
+    useMainContainer?: boolean;
 }
 
-const { title, description } = Astro.props;
+const { title, description, useMainContainer = true } = Astro.props;
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
@@ -78,7 +80,7 @@ const localizePath = (path: string) => {
 			</div>
 		</header>
 
-		<main class="flex-grow container mx-auto px-4 py-8 md:py-12">
+		<main class={`flex-grow ${useMainContainer ? 'container mx-auto px-4 py-8 md:py-12' : ''}`}>
 			<slot />
 		</main>
 

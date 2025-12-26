@@ -1,5 +1,5 @@
 ---
-title: "Campamento Arqueología"
+title: "Campamento de Arqueología"
 description: "Pedra Tallada realiza todos los veranos el CAMPAMENTO de ARQUEO-ESTIU en la finca Santa Bárbara, Altea la Vieja."
 cover: "../../assets/images/arch_camp.webp"
 tags: ["Verano", "Campamento", "Exterior"]

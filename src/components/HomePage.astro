@@ -5,6 +5,10 @@ import { getCollection } from 'astro:content';
 import heroBg from '../assets/images/hero.jpeg';
 import { useTranslations } from '../i18n/utils';
 
+import logoAltea from '../assets/images/logo_altea.png';
+import logoUv from '../assets/images/logo_uv.jpg';
+import logoMupreva from '../assets/images/logo_mupreva.png';
+
 interface Props {
   lang: 'es' | 'en' | 'ca';
 }
@@ -27,9 +31,10 @@ const recentProjects = filteredProjects.slice(0, 3);
 <Layout
 	title={`Anthropos | ${t('hero.subtitle')}`}
 	description={t('hero.desc')}
+    useMainContainer={false}
 >
 	<!-- Hero Section -->
-	<section class="relative mb-16 md:mb-24 rounded-3xl overflow-hidden aspect-4/5 md:aspect-21/9 flex items-center justify-center">
+	<section class="relative h-[85vh] md:h-[90vh] flex items-center justify-center overflow-hidden">
 		<Image 
 			src={heroBg} 
 			alt="Archaeology Background" 
@@ -38,12 +43,12 @@ const recentProjects = filteredProjects.slice(0, 3);
 			format="webp"
 			loading="eager"
 		/>
-		<div class="absolute inset-0 bg-stone-900/60 z-10 p-8 flex flex-col items-center justify-center text-center">
+		<div class="absolute inset-0 bg-stone-900/50 z-10 flex flex-col items-center justify-center text-center px-4">
 			<span class="text-white font-bold tracking-widest text-sm uppercase mb-4 animate-fade-in">{t('hero.subtitle')}</span>
 			<h1 class="text-4xl md:text-6xl lg:text-7xl font-serif text-stone-50 mb-6 leading-tight max-w-4xl">
 				{t('hero.title_part1')} <span class="text-clay-light italic">{t('hero.title_part2')}</span>
 			</h1>
-			<p class="text-lg md:text-xl text-stone-200 mb-10 max-w-2xl mx-auto leading-relaxed">
+			<p class="text-lg md:text-xl text-stone-200 mb-10 max-w-2xl mx-auto leading-relaxed shadow-stone-900/50 drop-shadow-md">
 				{t('hero.desc')}
 			</p>
 			<div class="flex flex-col sm:flex-row gap-4 justify-center w-full sm:w-auto">
@@ -57,79 +62,80 @@ const recentProjects = filteredProjects.slice(0, 3);
 		</div>
 	</section>
 
-	<!-- Featured Grid -->
-	<section id="proyectos" class="mb-16">
-		<div class="flex justify-center items-end mb-8">
-			<div class="text-center">
-				<h2 class="text-3xl font-serif text-stone-900 mb-2">Actividades Destacadas</h2>
-				<p class="text-stone-500 text-sm md:text-base">Nuestra selección de experiencias educativas y culturales</p>
-			</div>
-		</div>
-		
-		<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-			{recentProjects.map((project) => (
-				<a href={`/${project.slug || project.id}`} class="bg-white rounded-xl overflow-hidden border border-stone-100 shadow-sm hover:shadow-xl hover:shadow-stone-200/50 transition-all duration-300 group flex flex-col h-full cursor-pointer">
-					<div class="relative overflow-hidden aspect-video">
-                        {project.data.cover && (
-                            <Image 
-                                src={project.data.cover} 
-                                alt={project.data.title}
-                                class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
-                                width={600}
-                                height={400}
-                                format="webp"
-                                quality={80}
-                            />
-                        )}
-					</div>
-					
-					<div class="p-6 flex flex-col flex-1">
-						<h3 class="text-xl font-serif font-bold text-stone-900 mb-3 group-hover:text-clay-dark transition-colors">
-							{project.data.title}
-						</h3>
-						<p class="text-stone-600 mb-6 text-sm leading-relaxed line-clamp-3 grow">
-							{project.data.description}
-						</p>
-					</div>
-				</a>
-			))}
-		</div>
-		
-		<div class="mt-8 text-center md:hidden">
-			<a href={`/${lang === 'es' ? '' : lang + '/'}proyectos/educacion`.replace('//', '/')} class="inline-flex items-center gap-2 text-clay-dark hover:text-clay font-bold text-sm bg-stone-50 px-6 py-3 rounded-full">
-				{t('hero.cta_projects')} <span>→</span>
-			</a>
-		</div>
+    <div class="container mx-auto px-4 py-8 md:py-12">
+        <!-- Featured Grid -->
+        <section id="proyectos" class="mb-16 mt-8 md:mt-16">
+            <div class="flex justify-center items-end mb-8">
+                <div class="text-center">
+                    <h2 class="text-3xl font-serif text-stone-900 mb-2">Actividades Destacadas</h2>
+                    <p class="text-stone-500 text-sm md:text-base">Nuestra selección de experiencias educativas y culturales</p>
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {recentProjects.map((project) => (
+                    <a href={`/${project.slug || project.id}`} class="bg-white rounded-xl overflow-hidden border border-stone-100 shadow-sm hover:shadow-xl hover:shadow-stone-200/50 transition-all duration-300 group flex flex-col h-full cursor-pointer">
+                        <div class="relative overflow-hidden aspect-video">
+                            {project.data.cover && (
+                                <Image 
+                                    src={project.data.cover} 
+                                    alt={project.data.title}
+                                    class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                                    width={600}
+                                    height={400}
+                                    format="webp"
+                                    quality={80}
+                                />
+                            )}
+                        </div>
+                        
+                        <div class="p-6 flex flex-col flex-1">
+                            <h3 class="text-xl font-serif font-bold text-stone-900 mb-3 group-hover:text-clay-dark transition-colors">
+                                {project.data.title}
+                            </h3>
+                            <p class="text-stone-600 mb-6 text-sm leading-relaxed line-clamp-3 grow">
+                                {project.data.description}
+                            </p>
+                        </div>
+                    </a>
+                ))}
+            </div>
+            
+            <div class="mt-8 text-center md:hidden">
+                <a href={`/${lang === 'es' ? '' : lang + '/'}proyectos/educacion`.replace('//', '/')} class="inline-flex items-center gap-2 text-clay-dark hover:text-clay font-bold text-sm bg-stone-50 px-6 py-3 rounded-full">
+                    {t('hero.cta_projects')} <span>→</span>
+                </a>
+            </div>
 
-	</section>
+        </section>
 
-    <!-- Collaborators Section -->
-    <section class="mb-16 md:mb-24">
-        <div class="text-center mb-10">
-            <h2 class="text-2xl md:text-3xl font-serif text-stone-900 mb-2">{t('collaborators.title')}</h2>
-            <div class="h-1 w-20 bg-clay-dark mx-auto rounded-full"></div>
-        </div>
-        
-        <div class="flex flex-wrap justify-center items-center gap-12 md:gap-20 opacity-80 grayscale hover:grayscale-0 transition-all duration-500">
-             <img src="/src/assets/images/logo_altea.png" alt="Ayuntamiento de Altea" class="h-16 md:h-20 w-auto object-contain" />
-             <img src="/src/assets/images/logo_uv.jpg" alt="Universidad de Valencia" class="h-16 md:h-20 w-auto object-contain" />
-             <!-- Placeholder or if download works -->
-             <img src="/src/assets/images/logo_mupreva.png" alt="Museo de Prehistoria de Valencia" class="h-16 md:h-20 w-auto object-contain" />
-        </div>
-    </section>
+        <!-- Collaborators Section -->
+        <section class="mb-16 md:mb-24">
+            <div class="text-center mb-10">
+                <h2 class="text-2xl md:text-3xl font-serif text-stone-900 mb-2">{t('collaborators.title')}</h2>
+                <div class="h-1 w-20 bg-clay-dark mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="flex flex-wrap justify-center items-center gap-12 md:gap-20 opacity-80 grayscale hover:grayscale-0 transition-all duration-500">
+                <Image src={logoAltea} alt="Ayuntamiento de Altea" class="h-16 md:h-20 w-auto object-contain" />
+                <Image src={logoUv} alt="Universidad de Valencia" class="h-16 md:h-20 w-auto object-contain" />
+                <Image src={logoMupreva} alt="Museo de Prehistoria de Valencia" class="h-16 md:h-20 w-auto object-contain" />
+            </div>
+        </section>
 
-	<!-- Call to Action -->
-	<section class="bg-stone-900 rounded-3xl p-8 md:p-12 text-center text-stone-100 mb-16 relative overflow-hidden isolate">
-		<!-- Abstract decorative shape -->
-		<div class="absolute top-0 right-0 -mt-20 -mr-20 w-80 h-80 bg-clay-dark/20 rounded-full blur-3xl -z-10"></div>
-		<div class="absolute bottom-0 left-0 -mb-20 -ml-20 w-80 h-80 bg-moss-dark/20 rounded-full blur-3xl -z-10"></div>
-		
-		<h2 class="text-3xl md:text-4xl font-serif mb-6">¿Quieres organizar un taller o excursión?</h2>
-		<p class="text-stone-300 max-w-2xl mx-auto mb-8 text-lg">
-			Adaptamos nuestras actividades para colegios, grupos privados y ayuntamientos. Vive la prehistoria en primera persona.
-		</p>
-		<a href={`/${lang === 'es' ? '' : lang + '/'}contacto`.replace('//', '/')} class="inline-block bg-white text-stone-900 px-8 py-3 rounded-full font-bold hover:bg-stone-200 transition-colors">
-			Solicitar Presupuesto
-		</a>
-	</section>
+        <!-- Call to Action -->
+        <section class="bg-stone-900 rounded-3xl p-8 md:p-12 text-center text-stone-100 mb-16 relative overflow-hidden isolate">
+            <!-- Abstract decorative shape -->
+            <div class="absolute top-0 right-0 -mt-20 -mr-20 w-80 h-80 bg-clay-dark/20 rounded-full blur-3xl -z-10"></div>
+            <div class="absolute bottom-0 left-0 -mb-20 -ml-20 w-80 h-80 bg-moss-dark/20 rounded-full blur-3xl -z-10"></div>
+            
+            <h2 class="text-3xl md:text-4xl font-serif mb-6">¿Quieres organizar un taller o excursión?</h2>
+            <p class="text-stone-300 max-w-2xl mx-auto mb-8 text-lg">
+                Adaptamos nuestras actividades para colegios, grupos privados y ayuntamientos. Vive la prehistoria en primera persona.
+            </p>
+            <a href={`/${lang === 'es' ? '' : lang + '/'}contacto`.replace('//', '/')} class="inline-block bg-white text-stone-900 px-8 py-3 rounded-full font-bold hover:bg-stone-200 transition-colors">
+                Solicitar Presupuesto
+            </a>
+        </section>
+    </div>
 </Layout>

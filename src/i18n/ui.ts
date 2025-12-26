@@ -30,7 +30,7 @@ export const ui = {
     // Project Cards
     'project.educacion.title': 'Talleres Educativos',
     'project.educacion.desc': 'Nuestro taller de PREHISTORIA para colegios e institutos tiene como objetivo enseñar al alumnado los conocimientos más destacados de la arqueología prehistórica.',
-    'project.campamento-arqueologia.title': 'Campamento Arqueología',
+    'project.campamento-arqueologia.title': 'Campamento de Arqueología',
     'project.campamento-arqueologia.desc': 'Pedra Tallada realiza todos los veranos el CAMPAMENTO de ARQUEO-ESTIU en la finca Santa Bárbara, Altea la Vieja.',
     'project.museos.title': 'Museos y Patrimonio',
     'project.museos.desc': 'Llevamos la arqueología fuera de los laboratorios y excavacions, acercándola al público a través de la divulgación científica y la arqueología experimental.',
