@@ -16,5 +16,4 @@ date: "Ongoing"
       <li>We create interest and commitment to the archaeological, historical, and environmental heritage that surrounds us.</li>
     </ul>
   </div>
-  <!-- Content continues in default Spanish or untranslated for now if not available -->
 </div>

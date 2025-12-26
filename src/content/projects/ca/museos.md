@@ -12,5 +12,4 @@ date: "Permanent"
       Oferim a museus i centres culturals tallers, demostracions i activitats participatives dissenyades per apropar el passat als visitants de totes les edats d'una forma rigorosa, dinàmica i memorable.
     </p>
   </div>
-   <!-- Content continues in default Spanish or untranslated for now if not available -->
 </div>

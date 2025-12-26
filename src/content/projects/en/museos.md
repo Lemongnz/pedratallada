@@ -12,5 +12,4 @@ date: "Permanent"
       We offer museums and cultural centers workshops, demonstrations, and participatory activities designed to bring the past closer to visitors of all ages in a rigorous, dynamic, and memorable way.
     </p>
   </div>
-   <!-- Content continues in default Spanish or untranslated for now if not available -->
 </div>
