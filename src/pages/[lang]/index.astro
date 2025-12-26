@@ -1,0 +1,16 @@
+---
+import Layout from '../../layouts/Layout.astro';
+// Updated path based on file check
+import HomePage from '../../components/HomePage.astro'; 
+
+export async function getStaticPaths() {
+  return [
+    { params: { lang: 'en' } },
+    { params: { lang: 'ca' } },
+  ];
+}
+
+const { lang } = Astro.params;
+---
+
+<HomePage lang={lang as 'es' | 'en' | 'ca'} />
