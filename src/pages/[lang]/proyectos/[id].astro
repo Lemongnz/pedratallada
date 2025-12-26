@@ -1,0 +1,20 @@
+---
+import { projects } from '../../../data/projects';
+import ProjectView from '../../../components/pages/ProjectView.astro';
+
+export function getStaticPaths() {
+  const languages = ['en', 'ca'];
+  
+  return languages.flatMap(lang => 
+    projects.map((project) => ({
+      params: { lang, id: project.id },
+      props: { project },
+    }))
+  );
+}
+
+const { project } = Astro.props;
+const { lang } = Astro.params;
+---
+
+<ProjectView project={project} lang={lang as 'en' | 'ca'} />

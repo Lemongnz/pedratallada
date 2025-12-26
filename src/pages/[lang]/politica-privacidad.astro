@@ -1,0 +1,14 @@
+---
+import PrivacyContent from '../../components/content/PrivacyContent.astro';
+
+export function getStaticPaths() {
+  return [
+    {params: {lang: 'en'}},
+    {params: {lang: 'ca'}},
+  ];
+}
+
+const { lang } = Astro.params;
+---
+
+<PrivacyContent lang={lang} />

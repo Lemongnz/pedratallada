@@ -13,9 +13,12 @@ export function useTranslations(lang: keyof typeof ui) {
 }
 
 export function getRouteFromUrl(url: URL): string | undefined {
-    const [, lang, ...rest] = url.pathname.split('/');
-    if (lang in ui) {
-        return rest.join('/') || undefined;
+    const pathname = url.pathname;
+    const parts = pathname.split('/');
+    const potentialLang = parts[1];
+
+    if (potentialLang && potentialLang in ui) {
+        return parts.slice(2).join('/') || undefined;
     }
-    return rest.join('/') || undefined;
+    return parts.slice(1).join('/') || undefined;
 }

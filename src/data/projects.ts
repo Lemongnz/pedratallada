@@ -95,7 +95,8 @@ export const projects = [
     image: archCamp,
     tags: ['Verano', 'Campamento', 'Exterior'],
     date: 'Julio (Anual)',
-    content: `
+    content: '', // Deprecated, keep for fallbacks if needed or remove if safe. I'll remove it and rely on logic.
+    content_es: `
       <div class="space-y-8">
         <div class="bg-clay-light/10 p-6 rounded-xl border border-clay-light/30">
           <h3 class="text-xl font-bold text-clay-dark mb-2">ARQUEO-ESTIU</h3>
@@ -139,6 +140,104 @@ export const projects = [
              <div>
                 <h4 class="text-xl font-bold text-stone-800">Olimpiadas y Bioblitz</h4>
                 <p class="text-stone-600">Olimpiadas de habilidades humanas (equilibrio, orientación, fuerza) e inventario de especies naturales (Bioblitz) de la Finca Santa Bárbara.</p>
+             </div>
+           </div>
+        </div>
+      </div>
+    `,
+    content_en: `
+      <div class="space-y-8">
+        <div class="bg-clay-light/10 p-6 rounded-xl border border-clay-light/30">
+          <h3 class="text-xl font-bold text-clay-dark mb-2">ARQUEO-ESTIU (SUMMER ARCHAEOLOGY)</h3>
+          <ul class="space-y-2 text-stone-800 font-medium">
+             <li>📅 During July</li>
+             <li>👶 For youths aged 10 to 17</li>
+             <li>📍 Santa Bárbara Estate, Altea la Vieja</li>
+             <li>🏛️ Organized by: Pedra Tallada and Altea City Council</li>
+          </ul>
+        </div>
+
+        <div>
+           <h2 class="text-3xl font-serif font-bold text-stone-900 mb-6">What do we do?</h2>
+           
+           <div class="space-y-6">
+             <div>
+                <h4 class="text-xl font-bold text-stone-800">Mesolithic Huts</h4>
+                <p class="text-stone-600">We recreate models of semicircular Neolithic huts made from cane, serving as the base for each group.</p>
+             </div>
+             
+             <div>
+                <h4 class="text-xl font-bold text-stone-800">Archaeological Excavation</h4>
+                <p class="text-stone-600">Artificial excavation area with buried materials simulating different eras. We learn to dig, coordinate, draw findings, and restore.</p>
+             </div>
+
+             <div>
+                <h4 class="text-xl font-bold text-stone-800">Obstacle Courses</h4>
+                <p class="text-stone-600">Physical challenges on the estate: zip line, rope bridge, river crossing, log jumping, and more.</p>
+             </div>
+
+             <div>
+                <h4 class="text-xl font-bold text-stone-800">Neolithic Pottery</h4>
+                <p class="text-stone-600">We make Neolithic pots from clay using the same manufacturing, modeling, and decorating techniques as in the Neolithic period.</p>
+             </div>
+             
+             <div>
+                <h4 class="text-xl font-bold text-stone-800">Beekeeping and Entomology Workshops</h4>
+                <p class="text-stone-600">We teach about the life of insects around us and their importance to our ecosystem.</p>
+             </div>
+
+             <div>
+                <h4 class="text-xl font-bold text-stone-800">Olympics and Bioblitz</h4>
+                <p class="text-stone-600">Olympics of human skills (balance, orientation, strength) and a natural species inventory (Bioblitz) of the Santa Bárbara Estate.</p>
+             </div>
+           </div>
+        </div>
+      </div>
+    `,
+    content_ca: `
+      <div class="space-y-8">
+        <div class="bg-clay-light/10 p-6 rounded-xl border border-clay-light/30">
+          <h3 class="text-xl font-bold text-clay-dark mb-2">ARQUEO-ESTIU</h3>
+          <ul class="space-y-2 text-stone-800 font-medium">
+             <li>📅 Durant el mes de Juliol</li>
+             <li>👶 Per a joves de 10 a 17 anys</li>
+             <li>📍 Finca Santa Bàrbara, Altea la Vella</li>
+             <li>🏛️ Organitza: Pedra Tallada i l'Ajuntament d'Altea</li>
+          </ul>
+        </div>
+
+        <div>
+           <h2 class="text-3xl font-serif font-bold text-stone-900 mb-6">Què fem?</h2>
+           
+           <div class="space-y-6">
+             <div>
+                <h4 class="text-xl font-bold text-stone-800">Cabanes Mesolítiques</h4>
+                <p class="text-stone-600">Recreem models de cabana neolítica de tipus semicircular fabricades amb canya des de zero, que seran els llocs de referència de cada grup.</p>
+             </div>
+             
+             <div>
+                <h4 class="text-xl font-bold text-stone-800">Excavació Arqueològica</h4>
+                <p class="text-stone-600">Espai d'excavació artificial amb materials enterrats que simulen diferents etapes. Aprendrem a excavar, coordinar, dibuixar material i restaurar.</p>
+             </div>
+
+             <div>
+                <h4 class="text-xl font-bold text-stone-800">Curses d'Obstacles</h4>
+                <p class="text-stone-600">Proves físiques a la finca: tirolina, passarel·la de cordes, pas del riu, salt sobre troncs, entre d'altres.</p>
+             </div>
+
+             <div>
+                <h4 class="text-xl font-bold text-stone-800">Ceràmica Neolítica</h4>
+                <p class="text-stone-600">Fabriquem recipients neolítics a partir d'argila utilitzant les mateixes tècniques de fabricació, modelatge i decoració que al Neolític.</p>
+             </div>
+             
+             <div>
+                <h4 class="text-xl font-bold text-stone-800">Tallers d'Apicultura i Entomologia</h4>
+                <p class="text-stone-600">Ensenyem la vida dels insectes que ens envolten i la seva importància per al nostre ecosistema.</p>
+             </div>
+
+             <div>
+                <h4 class="text-xl font-bold text-stone-800">Olimpíades i Bioblitz</h4>
+                <p class="text-stone-600">Olimpíades d'habilitats humanes (equilibri, orientació, força) i inventari d'espècies naturals (Bioblitz) de la Finca Santa Bàrbara.</p>
              </div>
            </div>
         </div>

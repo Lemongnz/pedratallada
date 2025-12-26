@@ -1,0 +1,100 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import { useTranslations } from '../../i18n/utils';
+
+// Helper for generic project type, assuming the structure based on usage
+interface Project {
+    id: string;
+    title: string;
+    description: string;
+    image: ImageMetadata;
+    tags: string[];
+    date: string;
+    content?: string;
+    content_es?: string;
+    content_en?: string;
+    content_ca?: string;
+}
+
+interface Props {
+    project: Project;
+    lang: 'es' | 'en' | 'ca';
+}
+
+const { project, lang } = Astro.props;
+const t = useTranslations(lang);
+
+// Determine valid content based on language
+let projectContent = project.content;
+if (lang === 'en' && project.content_en) projectContent = project.content_en;
+if (lang === 'ca' && project.content_ca) projectContent = project.content_ca;
+if (lang === 'es' && project.content_es) projectContent = project.content_es;
+
+const homeLink = lang === 'es' ? '/' : `/${lang}`;
+const contactLink = lang === 'es' ? '/contacto' : `/${lang}/contacto`;
+const localizedBackText = lang === 'es' ? '← Volver al Inicio' : (lang === 'en' ? '← Back to Home' : '← Tornar a l\'Inici'); // Fallback/Quick fix if t() not ready
+---
+
+<Layout
+    title={`${t(`project.${project.id}.title` as any)} | Pedra Tallada`}
+    description={t(`project.${project.id}.desc` as any)}
+>
+    <!-- Hero Section -->
+    <section class="relative h-[50vh] min-h-[400px] mb-12 lg:mb-20">
+        <Image 
+            src={project.image} 
+            alt={t(`project.${project.id}.title` as any)}
+            class="absolute inset-0 w-full h-full object-cover"
+            width={1600}
+            quality={90}
+            format="webp"
+            loading="eager"
+        />
+        <div class="absolute inset-0 bg-stone-900/50 flex items-center justify-center">
+            <div class="text-center px-4 max-w-4xl mx-auto">
+                <div class="flex gap-2 justify-center mb-6">
+                    {project.tags.map(tag => (
+                        <span class="text-xs font-bold text-stone-900 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full shadow-sm">
+                            {tag}
+                        </span>
+                    ))}
+                </div>
+                <h1 class="text-4xl md:text-5xl lg:text-7xl font-serif text-white font-bold mb-6">
+                    {t(`project.${project.id}.title` as any)}
+                </h1>
+            </div>
+        </div>
+    </section>
+
+    <div class="container mx-auto px-4 max-w-4xl">
+        <!-- Content -->
+        <div class="bg-white rounded-3xl p-8 md:p-12 shadow-xl shadow-stone-200/50 -mt-20 md:-mt-32 relative z-10 mb-20">
+            <div class="flex justify-between items-center border-b border-stone-100 pb-8 mb-8">
+                <div>
+                    <span class="block text-sm text-stone-500 mb-1">{t('projects.date')}</span>
+                    <span class="font-bold text-stone-800">{project.date}</span>
+                </div>
+                <div class="text-right">
+                    <span class="block text-sm text-stone-500 mb-1">{t('projects.category')}</span>
+                    <span class="font-bold text-stone-800">{project.tags[0]}</span>
+                </div>
+            </div>
+
+            <div class="prose prose-stone prose-lg max-w-none">
+                <!-- Render rich content from data -->
+                 <!-- Note: Ideally content would also be localized. For now we use the static content field -->
+                <div set:html={projectContent} />
+            </div>
+
+            <div class="mt-12 pt-8 border-t border-stone-100 flex justify-between items-center">
+                <a href={homeLink} class="inline-flex items-center gap-2 text-stone-500 hover:text-clay-dark font-medium transition-colors">
+                    {t('projects.back_home')}
+                </a>
+                <a href={contactLink} class="inline-block bg-stone-900 text-white px-6 py-3 rounded-lg font-bold hover:bg-stone-800 transition-colors">
+                    {t('projects.check_availability')}
+                </a>
+            </div>
+        </div>
+    </div>
+</Layout>

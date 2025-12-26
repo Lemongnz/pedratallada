@@ -21,7 +21,7 @@ const recentProjects = projects.slice(0, 3);
 	description={t('hero.desc')}
 >
 	<!-- Hero Section -->
-	<section class="relative mb-16 md:mb-24 rounded-3xl overflow-hidden aspect-[4/5] md:aspect-[21/9] flex items-center justify-center">
+	<section class="relative mb-16 md:mb-24 rounded-3xl overflow-hidden aspect-4/5 md:aspect-21/9 flex items-center justify-center">
 		<Image 
 			src={heroBg} 
 			alt="Archaeology Background" 
@@ -60,7 +60,7 @@ const recentProjects = projects.slice(0, 3);
 		
 		<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 			{recentProjects.map((project) => (
-				<article class="bg-white rounded-xl overflow-hidden border border-stone-100 shadow-sm hover:shadow-xl hover:shadow-stone-200/50 transition-all duration-300 group flex flex-col h-full">
+				<a href={`/${lang === 'es' ? '' : lang + '/'}proyectos/${project.id}`.replace('//', '/')} class="bg-white rounded-xl overflow-hidden border border-stone-100 shadow-sm hover:shadow-xl hover:shadow-stone-200/50 transition-all duration-300 group flex flex-col h-full cursor-pointer">
 					<div class="relative overflow-hidden aspect-video">
 						<Image 
 							src={project.image} 
@@ -71,24 +71,17 @@ const recentProjects = projects.slice(0, 3);
 							format="webp"
 							quality={80}
 						/>
-                        <!-- Removed absolute tags div -->
 					</div>
 					
 					<div class="p-6 flex flex-col flex-1">
 						<h3 class="text-xl font-serif font-bold text-stone-900 mb-3 group-hover:text-clay-dark transition-colors">
 							{t(`project.${project.id}.title` as any)}
 						</h3>
-						<p class="text-stone-600 mb-6 text-sm leading-relaxed line-clamp-3 flex-grow">
+						<p class="text-stone-600 mb-6 text-sm leading-relaxed line-clamp-3 grow">
 							{t(`project.${project.id}.desc` as any)}
 						</p>
-						<div class="pt-4 border-t border-stone-100 flex justify-between items-center mt-auto">
-							<span class="text-xs font-medium text-stone-400 bg-stone-50 px-2 py-1 rounded">{project.date}</span>
-							<a href={`/${lang === 'es' ? '' : lang + '/'}proyectos/${project.id}`.replace('//', '/')} class="text-stone-900 font-bold text-sm hover:text-clay-dark transition-colors">
-								{t('projects.read_more')}
-							</a>
-						</div>
 					</div>
-				</article>
+				</a>
 			))}
 		</div>
 		
@@ -97,8 +90,7 @@ const recentProjects = projects.slice(0, 3);
 				{t('hero.cta_projects')} <span>→</span>
 			</a>
 		</div>
-			</a>
-		</div>
+
 	</section>
 
     <!-- Collaborators Section -->

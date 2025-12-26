@@ -83,7 +83,7 @@ const localizePath = (path: string) => {
 		<footer class="bg-stone-900 text-stone-400 py-12 mt-auto">
 			<div class="container mx-auto px-4 grid md:grid-cols-3 gap-8">
 				<div>
-					<h3 class="text-stone-200 font-serif font-bold text-xl mb-4">ANTHROPOS</h3>
+					<h3 class="text-stone-200 font-serif font-bold text-xl mb-4">PEDRATALLADA</h3>
 					<p class="text-sm leading-relaxed">
 						{t('footer.desc')}
 					</p>
@@ -91,16 +91,15 @@ const localizePath = (path: string) => {
 				<div>
 					<h4 class="text-stone-200 font-bold mb-4">{t('footer.services')}</h4> <!-- Simplified for now -->
 					<ul class="space-y-2 text-sm">
-						<li><a href="#" class="hover:text-stone-200 transition-colors">{t('footer.about')}</a></li>
-						<li><a href="#" class="hover:text-stone-200 transition-colors">{t('footer.services')}</a></li>
-						<li><a href="#" class="hover:text-stone-200 transition-colors">{t('footer.privacy')}</a></li>
+						<li><a href={localizePath('/nosotros')} class="hover:text-stone-200 transition-colors">{t('footer.about')}</a></li>
+						<li><a href={localizePath('/servicios')} class="hover:text-stone-200 transition-colors">{t('footer.services')}</a></li>
+						<li><a href={localizePath('/politica-privacidad')} class="hover:text-stone-200 transition-colors">{t('footer.privacy')}</a></li>
 					</ul>
 				</div>
 				<div>
 					<h4 class="text-stone-200 font-bold mb-4">{t('nav.contact')}</h4>
-					<p class="text-sm">info@anthropos-arch.com</p>
+					<p class="text-sm">info@pedratallada.com</p>
 					<div class="flex gap-4 mt-4">
-						<!-- Social Icons placeholders -->
 						<div class="w-8 h-8 bg-stone-800 rounded-full"></div>
 						<div class="w-8 h-8 bg-stone-800 rounded-full"></div>
 						<div class="w-8 h-8 bg-stone-800 rounded-full"></div>
@@ -108,7 +107,7 @@ const localizePath = (path: string) => {
 				</div>
 			</div>
 			<div class="container mx-auto px-4 mt-8 pt-8 border-t border-stone-800 text-center text-xs">
-				&copy; {new Date().getFullYear()} Anthropos Archaeology. {t('footer.rights')}
+				&copy; {new Date().getFullYear()} Pedra Tallada. {t('footer.rights')}
 			</div>
 		</footer>
 
