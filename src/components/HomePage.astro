@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { Image } from 'astro:assets';
-import { projects } from '../data/projects';
+import { getCollection } from 'astro:content';
 import heroBg from '../assets/images/hero.jpeg';
 import { useTranslations } from '../i18n/utils';
 
@@ -12,8 +12,16 @@ interface Props {
 const { lang } = Astro.props;
 const t = useTranslations(lang);
 
+const allProjects = await getCollection('projects');
+let filteredProjects = [];
+if (lang === 'es') {
+  filteredProjects = allProjects.filter(p => !p.id.includes('/'));
+} else {
+  filteredProjects = allProjects.filter(p => p.id.startsWith(lang + '/'));
+}
+
 // Get just the first 3 projects for the home page
-const recentProjects = projects.slice(0, 3);
+const recentProjects = filteredProjects.slice(0, 3);
 ---
 
 <Layout
@@ -39,7 +47,7 @@ const recentProjects = projects.slice(0, 3);
 				{t('hero.desc')}
 			</p>
 			<div class="flex flex-col sm:flex-row gap-4 justify-center w-full sm:w-auto">
-				<a href={`/${lang === 'es' ? '' : lang + '/'}proyectos/educacion`.replace('//', '/')} class="inline-block bg-clay-dark text-white px-8 py-3 rounded-full font-semibold hover:bg-clay transition-all duration-300 shadow-lg shadow-clay/20 transform hover:-translate-y-1">
+				<a href={`/${lang === 'es' ? '' : lang + '/'}educacion`.replace('//', '/')} class="inline-block bg-clay-dark text-white px-8 py-3 rounded-full font-semibold hover:bg-clay transition-all duration-300 shadow-lg shadow-clay/20 transform hover:-translate-y-1">
 					{t('hero.cta_projects')}
 				</a>
 				<a href={`/${lang === 'es' ? '' : lang + '/'}contacto`.replace('//', '/')} class="inline-block bg-stone-100/90 backdrop-blur-sm text-stone-900 px-8 py-3 rounded-full font-semibold hover:bg-white transition-all duration-300 transform hover:-translate-y-1">
@@ -60,25 +68,27 @@ const recentProjects = projects.slice(0, 3);
 		
 		<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 			{recentProjects.map((project) => (
-				<a href={`/${lang === 'es' ? '' : lang + '/'}proyectos/${project.id}`.replace('//', '/')} class="bg-white rounded-xl overflow-hidden border border-stone-100 shadow-sm hover:shadow-xl hover:shadow-stone-200/50 transition-all duration-300 group flex flex-col h-full cursor-pointer">
+				<a href={`/${project.slug || project.id}`} class="bg-white rounded-xl overflow-hidden border border-stone-100 shadow-sm hover:shadow-xl hover:shadow-stone-200/50 transition-all duration-300 group flex flex-col h-full cursor-pointer">
 					<div class="relative overflow-hidden aspect-video">
-						<Image 
-							src={project.image} 
-							alt={t(`project.${project.id}.title` as any)}
-							class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
-							width={600}
-							height={400}
-							format="webp"
-							quality={80}
-						/>
+                        {project.data.cover && (
+                            <Image 
+                                src={project.data.cover} 
+                                alt={project.data.title}
+                                class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                                width={600}
+                                height={400}
+                                format="webp"
+                                quality={80}
+                            />
+                        )}
 					</div>
 					
 					<div class="p-6 flex flex-col flex-1">
 						<h3 class="text-xl font-serif font-bold text-stone-900 mb-3 group-hover:text-clay-dark transition-colors">
-							{t(`project.${project.id}.title` as any)}
+							{project.data.title}
 						</h3>
 						<p class="text-stone-600 mb-6 text-sm leading-relaxed line-clamp-3 grow">
-							{t(`project.${project.id}.desc` as any)}
+							{project.data.description}
 						</p>
 					</div>
 				</a>
