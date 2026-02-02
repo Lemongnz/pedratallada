@@ -76,7 +76,7 @@ export const ui = {
     'privacy.collection_text': 'Solo recopilamos los datos necesarios para gestionar el contacto (nombre, email).',
     'privacy.use_title': 'Uso de la información',
     'privacy.use_text': 'Tus datos solo se usarán para responder a tu consulta.',
-    'privacy.contact': 'Si tienes dudas, escríbenos a info@pedratallada.com',
+    'privacy.contact': 'Si tienes dudas, escríbenos a arqueopedratallada@gmail.com',
   },
   en: {
     'nav.home': 'Home',
@@ -147,7 +147,7 @@ export const ui = {
     'privacy.collection_text': 'We only collect data necessary to manage contact (name, email).',
     'privacy.use_title': 'Use of Information',
     'privacy.use_text': 'Your data will only be used to respond to your inquiry.',
-    'privacy.contact': 'If you have questions, write to us at info@pedratallada.com',
+    'privacy.contact': 'If you have questions, write to us at arqueopedratallada@gmail.com',
   },
   ca: {
     'nav.home': 'Inici',
@@ -218,6 +218,6 @@ export const ui = {
     'privacy.collection_text': 'Només recopilem les dades necessàries per gestionar el contacte (nom, email).',
     'privacy.use_title': 'Ús de la informació',
     'privacy.use_text': 'Les teves dades només s\'utilitzaran per respondre a la teva consulta.',
-    'privacy.contact': 'Si tens dubtes, escriu-nos a info@pedratallada.com',
+    'privacy.contact': 'Si tens dubtes, escriu-nos a arqueopedratallada@gmail.com',
   },
 } as const;
