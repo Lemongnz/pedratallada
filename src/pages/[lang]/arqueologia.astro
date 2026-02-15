@@ -1,0 +1,14 @@
+---
+import ArchaeologyPage from '../../components/ArchaeologyPage.astro';
+
+export function getStaticPaths() {
+  return [
+    {params: {lang: 'en'}},
+    {params: {lang: 'ca'}},
+  ];
+}
+
+const { lang } = Astro.params;
+---
+
+<ArchaeologyPage lang={lang as 'es' | 'en' | 'ca'} />

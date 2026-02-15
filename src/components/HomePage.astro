@@ -1,9 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { Image } from 'astro:assets';
-import { getCollection } from 'astro:content';
-import heroBg from '../assets/images/hero.jpeg';
 import { useTranslations } from '../i18n/utils';
+
+// Images
+import heroBg from '../assets/images/hero.jpeg'; // Divulgación
+import headBoneImg from '../assets/images/head_bone.jpeg'; // Arqueología
+import educationImg from '../assets/images/educacion-banner.jpg'; // Educación Card
 
 import logoAltea from '../assets/images/logo_altea.png';
 import logoUv from '../assets/images/logo_uv.jpg';
@@ -16,16 +19,11 @@ interface Props {
 const { lang } = Astro.props;
 const t = useTranslations(lang);
 
-const allProjects = await getCollection('projects');
-let filteredProjects = [];
-if (lang === 'es') {
-  filteredProjects = allProjects.filter(p => !p.id.includes('/'));
-} else {
-  filteredProjects = allProjects.filter(p => p.id.startsWith(lang + '/'));
-}
-
-// Get just the first 3 projects for the home page
-const recentProjects = filteredProjects.slice(0, 3);
+const localizePath = (path: string) => {
+    if (lang === 'es') return path;
+    const p = path.startsWith('/') ? path : `/${path}`;
+    return `/${lang}${p}`;
+};
 ---
 
 <Layout
@@ -33,33 +31,74 @@ const recentProjects = filteredProjects.slice(0, 3);
 	description={t('hero.desc')}
     useMainContainer={false}
 >
-	<!-- Hero Section -->
-	<section class="relative h-[85vh] md:h-[90vh] flex items-center justify-center overflow-hidden">
-		<Image 
-			src={heroBg} 
-			alt="Archaeology Background" 
-			class="absolute inset-0 w-full h-full object-cover z-0"
-			quality={80}
-			format="webp"
-			loading="eager"
-		/>
-		<div class="absolute inset-0 bg-stone-900/50 z-10 flex flex-col items-center justify-center text-center px-4">
-			<span class="text-white font-bold tracking-widest text-sm uppercase mb-4 animate-fade-in">{t('hero.subtitle')}</span>
-			<h1 class="text-4xl md:text-6xl lg:text-7xl font-serif text-stone-50 mb-6 leading-tight max-w-4xl">
-				{t('hero.title_part1')} <span class="text-clay-light italic">{t('hero.title_part2')}</span>
-			</h1>
-			<p class="text-lg md:text-xl text-stone-200 mb-10 max-w-2xl mx-auto leading-relaxed shadow-stone-900/50 drop-shadow-md">
-				{t('hero.desc')}
-			</p>
-			<div class="flex flex-col sm:flex-row gap-4 justify-center w-full sm:w-auto">
-				<a href={`/${lang === 'es' ? '' : lang + '/'}educacion`.replace('//', '/')} class="inline-block bg-clay-dark text-white px-8 py-3 rounded-full font-semibold hover:bg-clay transition-all duration-300 shadow-lg shadow-clay/20 transform hover:-translate-y-1">
-					{t('hero.cta_projects')}
-				</a>
-				<a href={`/${lang === 'es' ? '' : lang + '/'}contacto`.replace('//', '/')} class="inline-block bg-stone-100/90 backdrop-blur-sm text-stone-900 px-8 py-3 rounded-full font-semibold hover:bg-white transition-all duration-300 transform hover:-translate-y-1">
-					{t('hero.cta_contact')}
-				</a>
-			</div>
-		</div>
+	<!-- Hero Section Slider -->
+	<section class="relative h-[85vh] md:h-[90vh] overflow-hidden group bg-stone-900">
+        
+        <!-- Slides Container -->
+        <div id="hero-slider" class="flex w-full h-full overflow-x-auto snap-x snap-mandatory scrollbar-hide scroll-smooth">
+            
+            <!-- Slide 1: Archaeology -->
+            <div class="min-w-full h-full relative snap-center flex items-center justify-center shrink-0">
+                <div class="absolute inset-0 bg-stone-900/40 z-10"></div>
+                <Image 
+                    src={headBoneImg} 
+                    alt="Archaeology Excavation" 
+                    class="absolute inset-0 w-full h-full object-cover z-0"
+                    quality={80}
+                    format="webp"
+                    loading="eager"
+                />
+                 <div class="relative z-20 text-center px-4 max-w-4xl mx-auto animate-fade-in-up">
+                    <span class="text-white/90 font-bold tracking-widest text-sm uppercase mb-4 block shadow-black drop-shadow-md">
+                         {t('archaeology.subtitle')}
+                    </span>
+                    <h1 class="text-4xl md:text-6xl lg:text-7xl font-serif text-stone-50 mb-6 leading-tight drop-shadow-lg">
+                        {t('hero.title_part1')} <span class="text-clay-light italic">{t('hero.title_part2')}</span>
+                    </h1>
+                     <div class="flex flex-col sm:flex-row gap-4 justify-center mt-8">
+                        <a href={localizePath('/arqueologia')} class="inline-block bg-clay-dark text-white px-8 py-3 rounded-full font-semibold hover:bg-clay transition-all duration-300 shadow-lg shadow-clay/20 transform hover:-translate-y-1">
+                            {t('archaeology.title')}
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 2: Outreach -->
+            <div class="min-w-full h-full relative snap-center flex items-center justify-center shrink-0">
+                <div class="absolute inset-0 bg-stone-900/40 z-10"></div>
+                <Image 
+                    src={heroBg} 
+                    alt="Archaeology Outreach" 
+                    class="absolute inset-0 w-full h-full object-cover z-0"
+                    quality={80}
+                    format="webp"
+                    loading="lazy"
+                />
+                 <div class="relative z-20 text-center px-4 max-w-4xl mx-auto">
+                    <span class="text-white/90 font-bold tracking-widest text-sm uppercase mb-4 block shadow-black drop-shadow-md">
+                        Pedra Tallada
+                    </span>
+                    <h1 class="text-4xl md:text-6xl lg:text-7xl font-serif text-stone-50 mb-6 leading-tight drop-shadow-lg">
+                        {t('hero.subtitle')}
+                    </h1>
+                    <p class="text-lg md:text-xl text-stone-200 mb-10 max-w-2xl mx-auto leading-relaxed drop-shadow-md hidden md:block">
+                        {t('hero.desc')}
+                    </p>
+                     <div class="flex flex-col sm:flex-row gap-4 justify-center mt-8">
+                        <a href={localizePath('/educacion')} class="inline-block bg-stone-100/90 backdrop-blur-sm text-stone-900 px-8 py-3 rounded-full font-semibold hover:bg-white transition-all duration-300 transform hover:-translate-y-1">
+                             {t('project.educacion.title')}
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Slider Indicators -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-30 flex gap-3">
+            <button class="w-3 h-3 rounded-full bg-white transition-all duration-300 slider-dot ring-2 ring-white/50 scale-125" data-index="0" aria-label="Slide 1"></button>
+            <button class="w-3 h-3 rounded-full bg-white/50 hover:bg-white transition-all duration-300 slider-dot ring-2 ring-transparent" data-index="1" aria-label="Slide 2"></button>
+        </div>
 	</section>
 
     <div class="container mx-auto px-4 py-8 md:py-12">
@@ -68,45 +107,75 @@ const recentProjects = filteredProjects.slice(0, 3);
             <div class="flex justify-center items-end mb-8">
                 <div class="text-center">
                     <h2 class="text-3xl font-serif text-stone-900 mb-2">Actividades Destacadas</h2>
-                    <p class="text-stone-500 text-sm md:text-base">Nuestra selección de experiencias educativas y culturales</p>
+                    <p class="text-stone-500 text-sm md:text-base">Servicios profesionales y educación</p>
                 </div>
             </div>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {recentProjects.map((project) => (
-                    <a href={`/${project.slug || project.id}`} class="bg-white rounded-xl overflow-hidden border border-stone-100 shadow-sm hover:shadow-xl hover:shadow-stone-200/50 transition-all duration-300 group flex flex-col h-full cursor-pointer">
-                        <div class="relative overflow-hidden aspect-video">
-                            {project.data.cover && (
-                                <Image 
-                                    src={project.data.cover} 
-                                    alt={project.data.title}
-                                    class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
-                                    width={600}
-                                    height={400}
-                                    format="webp"
-                                    quality={80}
-                                />
-                            )}
+            <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                
+                <!-- Card 1: Servicios Arqueología -->
+                 <a href={localizePath('/arqueologia')} class="bg-white rounded-xl overflow-hidden border border-stone-100 shadow-sm hover:shadow-xl hover:shadow-stone-200/50 transition-all duration-300 group flex flex-col h-full cursor-pointer">
+                    <div class="relative overflow-hidden aspect-video">
+                        <Image 
+                            src={headBoneImg} 
+                            alt="Servicios Arqueología"
+                            class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                            width={800}
+                            height={500}
+                            format="webp"
+                            quality={80}
+                        />
+                        <div class="absolute top-4 left-4 bg-clay-dark text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide shadow-md">
+                            Servicios
                         </div>
-                        
-                        <div class="p-6 flex flex-col flex-1">
-                            <h3 class="text-xl font-serif font-bold text-stone-900 mb-3 group-hover:text-clay-dark transition-colors">
-                                {project.data.title}
-                            </h3>
-                            <p class="text-stone-600 mb-6 text-sm leading-relaxed line-clamp-3 grow">
-                                {project.data.description}
-                            </p>
-                        </div>
-                    </a>
-                ))}
-            </div>
-            
-            <div class="mt-8 text-center md:hidden">
-                <a href={`/${lang === 'es' ? '' : lang + '/'}proyectos/educacion`.replace('//', '/')} class="inline-flex items-center gap-2 text-clay-dark hover:text-clay font-bold text-sm bg-stone-50 px-6 py-3 rounded-full">
-                    {t('hero.cta_projects')} <span>→</span>
+                    </div>
+                    
+                    <div class="p-6 flex flex-col flex-1">
+                        <h3 class="text-2xl font-serif font-bold text-stone-900 mb-3 group-hover:text-clay-dark transition-colors">
+                            {t('archaeology.title')}
+                        </h3>
+                        <p class="text-stone-600 mb-6 text-base leading-relaxed grow">
+                            {t('archaeology.intro')}
+                        </p>
+                        <span class="text-clay-dark font-medium group-hover:underline flex items-center gap-2">
+                            {t('projects.read_more')} 
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                        </span>
+                    </div>
                 </a>
-            </div>
 
+                <!-- Card 2: Talleres Educativos -->
+                <a href={localizePath('/educacion')} class="bg-white rounded-xl overflow-hidden border border-stone-100 shadow-sm hover:shadow-xl hover:shadow-stone-200/50 transition-all duration-300 group flex flex-col h-full cursor-pointer">
+                    <div class="relative overflow-hidden aspect-video">
+                        <Image 
+                            src={educationImg} 
+                            alt="Talleres Educativos"
+                            class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                            width={800}
+                            height={500}
+                            format="webp"
+                            quality={80}
+                        />
+                        <div class="absolute top-4 left-4 bg-stone-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide shadow-md">
+                            Divulgación
+                        </div>
+                    </div>
+                    
+                    <div class="p-6 flex flex-col flex-1">
+                        <h3 class="text-2xl font-serif font-bold text-stone-900 mb-3 group-hover:text-clay-dark transition-colors">
+                            {t('project.educacion.title')}
+                        </h3>
+                        <p class="text-stone-600 mb-6 text-base leading-relaxed grow">
+                            {t('project.educacion.desc')}
+                        </p>
+                        <span class="text-clay-dark font-medium group-hover:underline flex items-center gap-2">
+                             {t('projects.read_more')}
+                             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                        </span>
+                    </div>
+                </a>
+
+            </div>
         </section>
 
         <!-- Collaborators Section -->
@@ -116,7 +185,7 @@ const recentProjects = filteredProjects.slice(0, 3);
                 <div class="h-1 w-20 bg-clay-dark mx-auto rounded-full"></div>
             </div>
             
-            <div class="flex flex-wrap justify-center items-center gap-12 md:gap-20 transition-all duration-500">
+            <div class="flex flex-wrap justify-center items-center gap-12 md:gap-20 grayscale hover:grayscale-0 transition-all duration-500 opacity-70 hover:opacity-100">
                 <Image src={logoAltea} alt="Ayuntamiento de Altea" class="h-16 md:h-20 w-auto object-contain" />
                 <Image src={logoUv} alt="Universidad de Valencia" class="h-16 md:h-20 w-auto object-contain" />
                 <Image src={logoMupreva} alt="Museo de Prehistoria de Valencia" class="h-16 md:h-20 w-auto object-contain" />
@@ -129,13 +198,88 @@ const recentProjects = filteredProjects.slice(0, 3);
             <div class="absolute top-0 right-0 -mt-20 -mr-20 w-80 h-80 bg-clay-dark/20 rounded-full blur-3xl -z-10"></div>
             <div class="absolute bottom-0 left-0 -mb-20 -ml-20 w-80 h-80 bg-moss-dark/20 rounded-full blur-3xl -z-10"></div>
             
-            <h2 class="text-3xl md:text-4xl font-serif mb-6">¿Quieres organizar un taller o excursión?</h2>
+            <h2 class="text-3xl md:text-4xl font-serif mb-6">{t('contact.subtitle')}</h2>
             <p class="text-stone-300 max-w-2xl mx-auto mb-8 text-lg">
-                Adaptamos nuestras actividades para colegios, grupos privados y ayuntamientos. Vive la prehistoria en primera persona.
+                {t('contact.desc')}
             </p>
-            <a href={`/${lang === 'es' ? '' : lang + '/'}contacto`.replace('//', '/')} class="inline-block bg-white text-stone-900 px-8 py-3 rounded-full font-bold hover:bg-stone-200 transition-colors">
-                Solicitar Presupuesto
+            <a href={localizePath('/contacto')} class="inline-block bg-white text-stone-900 px-8 py-3 rounded-full font-bold hover:bg-stone-200 transition-colors">
+                {t('hero.cta_contact')}
             </a>
         </section>
     </div>
 </Layout>
+
+<script>
+    // Simple Slider Script
+    const slider = document.getElementById('hero-slider');
+    const dots = document.querySelectorAll('.slider-dot');
+    let currentSlide = 0;
+    const totalSlides = 2;
+    let interval: any;
+
+    const scrollSlider = (index: number) => {
+        if (!slider) return;
+        const width = slider.clientWidth;
+        slider.scrollTo({
+            left: width * index,
+            behavior: 'smooth'
+        });
+        
+        // Update dots
+        dots.forEach((dot, i) => {
+            const indexValue = parseInt((dot as HTMLElement).dataset.index || '0');
+            if (indexValue === index) {
+                dot.classList.add('bg-white', 'scale-125', 'ring-2', 'ring-white/50');
+                dot.classList.remove('bg-white/50', 'ring-transparent');
+            } else {
+                dot.classList.remove('bg-white', 'scale-125', 'ring-2', 'ring-white/50');
+                dot.classList.add('bg-white/50', 'ring-transparent');
+            }
+        });
+        currentSlide = index;
+    };
+
+    const startAutoplay = () => {
+        clearInterval(interval);
+        interval = setInterval(() => {
+            const next = (currentSlide + 1) % totalSlides;
+            scrollSlider(next);
+        }, 6000); 
+    };
+
+    // Manual Interaction
+    dots.forEach((dot) => {
+        dot.addEventListener('click', (e) => {
+            const target = e.target as HTMLElement;
+            const index = parseInt(target.dataset.index || '0');
+            scrollSlider(index);
+            startAutoplay(); // Reset timer
+        });
+    });
+
+    // Touch interaction handling (detect scroll)
+    if (slider) {
+        slider.addEventListener('scroll', () => {
+            // Optional: Debounce this to update dots if user swipes?
+            // For simplicity, we stick to click/timer for state update
+            // But we pause autoplay while scrolling manually
+        }, { passive: true });
+        
+        // Pause on hover
+        slider.addEventListener('mouseenter', () => clearInterval(interval));
+        slider.addEventListener('mouseleave', startAutoplay);
+    }
+
+    // Start
+    startAutoplay();
+</script>
+
+<style>
+    .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+    }
+    .scrollbar-hide {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+</style>

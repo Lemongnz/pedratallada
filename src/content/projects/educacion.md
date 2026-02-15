@@ -26,26 +26,32 @@ date: "En curso"
     <h3 class="text-2xl font-serif font-bold text-stone-800 mb-4">Ejes Temáticos</h3>
     <div class="grid gap-6 md:grid-cols-2">
       <div class="bg-white p-6 rounded-lg shadow-sm border border-stone-100">
+        <img src="/images/talleres/evolucion.jpg" alt="Evolución Humana" class="w-full h-48 object-cover rounded-lg mb-4" />
         <h4 class="font-bold text-xl text-clay-dark mb-2">¿Cómo evolucionó nuestra especie?</h4>
         <p class="text-stone-600">Abordaremos los conceptos generales de la evolución humana a lo largo del tiempo. El uso de réplicas de cráneos junto con materiales didácticos facilitará el aprendizaje.</p>
       </div>
       <div class="bg-white p-6 rounded-lg shadow-sm border border-stone-100">
+        <img src="/images/talleres/herramientas.jpg" alt="Herramientas Prehistóricas" class="w-full h-48 object-cover rounded-lg mb-4" />
         <h4 class="font-bold text-xl text-clay-dark mb-2">¿Qué herramientas utilizaban?</h4>
         <p class="text-stone-600">Fabricaremos utensilios usados para propósitos domésticos y de caza (puntas de flecha, bifaces, hachas de mano).</p>
       </div>
       <div class="bg-white p-6 rounded-lg shadow-sm border border-stone-100">
+        <img src="/images/talleres/pintura.jpeg" alt="Pintura Rupestre" class="w-full h-48 object-cover rounded-lg mb-4" />
         <h4 class="font-bold text-xl text-clay-dark mb-2">¿Con qué pintaban?</h4>
         <p class="text-stone-600">Pintaremos con pigmentos naturales y utensilios como lo hacían ellos, realizando demostraciones de técnicas como el aerógrafo.</p>
       </div>
       <div class="bg-white p-6 rounded-lg shadow-sm border border-stone-100">
+        <img src="/images/talleres/fuego.png" alt="Haciendo Fuego" class="w-full h-48 object-cover rounded-lg mb-4" />
         <h4 class="font-bold text-xl text-clay-dark mb-2">¿Cómo hacían fuego?</h4>
         <p class="text-stone-600">Haremos fuego a partir de elementos vegetales, tal y como lo hacían los grupos cazadores recolectores.</p>
       </div>
        <div class="bg-white p-6 rounded-lg shadow-sm border border-stone-100">
+        <img src="/images/talleres/musica.png" alt="Música Prehistórica" class="w-full h-48 object-cover rounded-lg mb-4" />
         <h4 class="font-bold text-xl text-clay-dark mb-2">¿Tenían música?</h4>
         <p class="text-stone-600">Mostraremos réplicas de instrumentos hallados en yacimientos españoles y franceses y los haremos sonar.</p>
       </div>
       <div class="bg-white p-6 rounded-lg shadow-sm border border-stone-100">
+        <img src="/images/talleres/caza.png" alt="Caza Prehistórica" class="w-full h-48 object-cover rounded-lg mb-4" />
         <h4 class="font-bold text-xl text-clay-dark mb-2">¿Cómo cazaban?</h4>
         <p class="text-stone-600">Los alumnos verán réplicas de armas paleolíticas y neolíticas y se convertirán en cazadores lanzando azagayas.</p>
       </div>
