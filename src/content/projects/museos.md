@@ -1,7 +1,7 @@
 ---
 title: "Museos y Patrimonio"
 description: "Llevamos la arqueología fuera de los laboratorios y excavaciones, acercándola al público a través de la divulgación científica y la arqueología experimental."
-cover: "../../assets/images/head_bone.jpeg"
+cover: "../../assets/images/head_bone.webp"
 tags: ["Museos", "Patrimonio", "Consultoría"]
 date: "Permanente"
 ---

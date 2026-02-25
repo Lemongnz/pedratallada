@@ -1,7 +1,7 @@
 ---
 title: "Museus i Patrimoni"
 description: "Portem l'arqueologia fora dels laboratoris i excavacions, apropant-la al públic a través de la divulgació científica i l'arqueologia experimental."
-cover: "../../../assets/images/head_bone.jpeg"
+cover: "../../../assets/images/head_bone.webp"
 tags: ["Museus", "Patrimoni", "Consultoria"]
 date: "Permanent"
 ---

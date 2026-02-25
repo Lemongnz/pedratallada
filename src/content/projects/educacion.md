@@ -1,7 +1,7 @@
 ---
 title: "Talleres Educativos"
 description: "Nuestro taller de PREHISTORIA para colegios e institutos tiene como objetivo enseñar al alumnado los conocimientos más destacados de la arqueología prehistórica."
-cover: "../../assets/images/education_card.jpeg"
+cover: "../../assets/images/education_card.webp"
 tags: ["Educación", "Talleres", "Escolar"]
 date: "En curso"
 ---

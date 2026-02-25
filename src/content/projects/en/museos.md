@@ -1,7 +1,7 @@
 ---
 title: "Museums & Heritage"
 description: "We take archaeology out of laboratories and excavations, bringing it closer to the public through scientific outreach and experimental archaeology."
-cover: "../../../assets/images/head_bone.jpeg"
+cover: "../../../assets/images/head_bone.webp"
 tags: ["Museums", "Heritage", "Consulting"]
 date: "Permanent"
 ---

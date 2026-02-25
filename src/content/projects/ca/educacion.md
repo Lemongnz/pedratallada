@@ -1,7 +1,7 @@
 ---
 title: "Educació i Divulgació"
 description: "El nostre taller de PREHISTÒRIA per a escoles i instituts té com a objectiu ensenyar l'alumnat els coneixements més destacats de l'arqueologia prehistòrica."
-cover: "../../../assets/images/education_card.jpeg"
+cover: "../../../assets/images/education_card.webp"
 tags: ["Educació", "Tallers", "Escolar"]
 date: "En curs"
 ---

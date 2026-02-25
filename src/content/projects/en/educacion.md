@@ -1,7 +1,7 @@
 ---
 title: "Education & Outreach"
 description: "Our PREHISTORY workshop for schools aims to teach students the most outstanding knowledge of prehistoric archaeology."
-cover: "../../../assets/images/education_card.jpeg"
+cover: "../../../assets/images/education_card.webp"
 tags: ["Education", "Workshops", "Schools"]
 date: "Ongoing"
 ---

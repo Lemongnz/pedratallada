@@ -84,7 +84,7 @@ export const ui = {
     'archaeology.subtitle': 'Intervenciones Técnicas y Científicas',
     'archaeology.intro': 'Ofrecemos soluciones integrales en gestión del patrimonio arqueológico, combinando rigor científico con eficiencia técnica.',
     'archaeology.s1.title': 'Excavaciones',
-    'archaeology.s1.desc': 'Dirección y ejecución de excavaciones arqueológicas en entornos urbanos y rurales. Metodología estratigráfica rigurosa.',
+    'archaeology.s1.desc': 'Dirección y ejecución de excavaciones arqueológicas en entornos urbanos y rurales.',
     'archaeology.s2.title': 'Prospecciones',
     'archaeology.s2.desc': 'Estudios de impacto patrimonial y prospecciones superficiales para obras civiles y planeamiento urbanístico.',
     'archaeology.s3.title': 'Consolidación de Materiales',
