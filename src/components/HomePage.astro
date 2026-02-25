@@ -50,12 +50,11 @@ const localizePath = (path: string) => {
             
             <!-- Left Half: Archaeology -->
             <a href={localizePath('/arqueologia')} class="flex-1 relative group flex flex-col items-center justify-center p-8 text-center outline-none focus-visible:ring-4 focus-visible:ring-clay-light focus-visible:ring-inset cursor-pointer no-underline text-stone-50">
-                <span class="text-white/90 font-bold tracking-widest text-sm md:text-base uppercase mb-3 block shadow-black drop-shadow-md">
-                    {t('archaeology.subtitle')}
-                </span>
-                <h1 class="text-4xl md:text-5xl lg:text-7xl font-serif mb-6 leading-tight drop-shadow-lg group-hover:scale-[1.02] group-focus-visible:scale-[1.02] transition-transform duration-500">
-                    {t('archaeology.title')}
-                </h1>
+                <div class="bg-stone-900/20 backdrop-blur-[2px] px-12 py-6 rounded-full mb-6 shadow-2xl transition-all duration-300">
+                    <h1 class="text-4xl md:text-5xl lg:text-7xl font-serif leading-tight drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)] group-hover:scale-[1.02] group-focus-visible:scale-[1.02] transition-transform duration-500 m-0">
+                        {t('archaeology.title')}
+                    </h1>
+                </div>
                 <span class="inline-block bg-white text-stone-900 px-8 py-3 rounded-full font-semibold shadow-lg shadow-black/20 group-hover:-translate-y-1 group-focus-visible:-translate-y-1 transition-transform duration-300">
                     {t('projects.read_more')}
                 </span>
@@ -63,12 +62,11 @@ const localizePath = (path: string) => {
 
             <!-- Right Half: Education/Outreach -->
             <a href={localizePath('/educacion')} class="flex-1 relative group flex flex-col items-center justify-center p-8 text-center outline-none focus-visible:ring-4 focus-visible:ring-clay-light focus-visible:ring-inset cursor-pointer no-underline text-stone-50">
-                <span class="text-white/90 font-bold tracking-widest text-sm md:text-base uppercase mb-3 block shadow-black drop-shadow-md">
-                    Pedra Tallada
-                </span>
-                <h1 class="text-4xl md:text-5xl lg:text-7xl font-serif mb-6 leading-tight drop-shadow-lg group-hover:scale-[1.02] group-focus-visible:scale-[1.02] transition-transform duration-500">
-                    {t('project.educacion.title')}
-                </h1>
+                <div class="bg-stone-900/20 backdrop-blur-[2px] px-12 py-6 rounded-full mb-6 shadow-2xl transition-all duration-300">
+                    <h1 class="text-4xl md:text-5xl lg:text-7xl font-serif leading-tight drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)] group-hover:scale-[1.02] group-focus-visible:scale-[1.02] transition-transform duration-500 m-0">
+                        {t('project.educacion.title')}
+                    </h1>
+                </div>
                 <span class="inline-block bg-stone-100/90 backdrop-blur-sm text-stone-900 px-8 py-3 rounded-full font-semibold shadow-lg shadow-black/20 group-hover:-translate-y-1 group-focus-visible:-translate-y-1 transition-transform duration-300">
                     {t('projects.read_more')}
                 </span>
