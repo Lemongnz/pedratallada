@@ -1,7 +1,7 @@
 ---
 title: "Campament Arqueologia"
 description: "Pedra Tallada realitza tots els estius el CAMPAMENT d'ARQUEO-ESTIU a la finca Santa Bàrbara, Altea la Vella."
-cover: "../../../assets/images/arch_camp.webp"
+cover: "../../../assets/images/camp.webp"
 tags: ["Estiu", "Campament", "Exterior"]
 date: "Juliol (Anual)"
 ---
@@ -22,7 +22,7 @@ date: "Juliol (Anual)"
        <div>
           <img src="/images/campamento/CABAÑAS.jpg" alt="Cabanes Mesolítiques" class="w-full h-64 object-cover rounded-xl mb-4" />
           <h4 class="text-xl font-bold text-stone-800">Cabanes Mesolítiques</h4>
-          <p class="text-stone-600">Recreem models de cabana neolítica de tipus semicircular fabricades amb canya des de zero, que seran els llocs de referència de cada grup.</p>
+          <p class="text-stone-600">Recreem models de cabanes mesolítiques de tipus circular fabricades amb canya des de zero, que seran els llocs de referència de cada grup.</p>
        </div>
        <div>
           <img src="/images/campamento/EXCAVACION.jpg" alt="Excavació Arqueològica" class="w-full h-64 object-cover rounded-xl mb-4" />
@@ -40,14 +40,9 @@ date: "Juliol (Anual)"
           <p class="text-stone-600">Fabriquem recipients neolítics a partir d'argila utilitzant les mateixes tècniques de fabricació, modelatge i decoració que al Neolític.</p>
        </div>      
        <div>
-          <img src="/images/campamento/apicultura.webp" alt="Tallers d'Apicultura i Entomologia" class="w-full h-64 object-cover rounded-xl mb-4" />
-          <h4 class="text-xl font-bold text-stone-800">Tallers d'Apicultura i Entomologia</h4>
-          <p class="text-stone-600">Ensenyem la vida dels insectes que ens envolten i la seva importància per al nostre ecosistema.</p>
-       </div>
-       <div>
-          <img src="/images/campamento/EXCURSIONES.jpeg" alt="Olimpíades i Bioblitz" class="w-full h-64 object-cover rounded-xl mb-4" />
-          <h4 class="text-xl font-bold text-stone-800">Olimpíades i Bioblitz</h4>
-          <p class="text-stone-600">Olimpíades d'habilitats humanes (equilibri, orientació, força) i inventari d'espècies naturals (Bioblitz) de la Finca Santa Bàrbara.</p>
+          <img src="/images/campamento/EXCURSIONES.jpeg" alt="Excursions i Bioblitz" class="w-full h-64 object-cover rounded-xl mb-4" />
+          <h4 class="text-xl font-bold text-stone-800">Excursions i Bioblitz</h4>
+          <p class="text-stone-600">Excursions a entorns naturals on realitzem identificació d'espècies vegetals i animals. També aprenem a conèixer la qualitat de l'aigua del nostre riu a través de bioindicadors.</p>
        </div>
      </div>
   </div>

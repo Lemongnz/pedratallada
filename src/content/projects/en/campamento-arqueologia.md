@@ -1,7 +1,7 @@
 ---
 title: "Archaeology Camp"
 description: "Pedra Tallada organizes the ARQUEO-ESTIU CAMP every summer at the Santa Bárbara estate, Altea la Vieja."
-cover: "../../../assets/images/arch_camp.webp"
+cover: "../../../assets/images/camp.webp"
 tags: ["Summer", "Camp", "Outdoors"]
 date: "July (Annual)"
 ---
@@ -22,7 +22,7 @@ date: "July (Annual)"
        <div>
           <img src="/images/campamento/CABAÑAS.jpg" alt="Mesolithic Huts" class="w-full h-64 object-cover rounded-xl mb-4" />
           <h4 class="text-xl font-bold text-stone-800">Mesolithic Huts</h4>
-          <p class="text-stone-600">We recreate models of semicircular Neolithic huts made from cane, serving as the base for each group.</p>
+          <p class="text-stone-600">We recreate models of circular Mesolithic huts made from cane from scratch, serving as the base for each group.</p>
        </div>    
        <div>
           <img src="/images/campamento/EXCAVACION.jpg" alt="Archaeological Excavation" class="w-full h-64 object-cover rounded-xl mb-4" />
@@ -40,14 +40,9 @@ date: "July (Annual)"
           <p class="text-stone-600">We make Neolithic pots from clay using the same manufacturing, modeling, and decorating techniques as in the Neolithic period.</p>
        </div>       
        <div>
-          <img src="/images/campamento/apicultura.webp" alt="Beekeeping and Entomology Workshops" class="w-full h-64 object-cover rounded-xl mb-4" />
-          <h4 class="text-xl font-bold text-stone-800">Beekeeping and Entomology Workshops</h4>
-          <p class="text-stone-600">We teach about the life of insects around us and their importance to our ecosystem.</p>
-       </div>
-       <div>
-          <img src="/images/campamento/EXCURSIONES.jpeg" alt="Olympics and Bioblitz" class="w-full h-64 object-cover rounded-xl mb-4" />
-          <h4 class="text-xl font-bold text-stone-800">Olympics and Bioblitz</h4>
-          <p class="text-stone-600">Olympics of human skills (balance, orientation, strength) and a natural species inventory (Bioblitz) of the Santa Bárbara Estate.</p>
+          <img src="/images/campamento/EXCURSIONES.jpeg" alt="Excursions and Bioblitz" class="w-full h-64 object-cover rounded-xl mb-4" />
+          <h4 class="text-xl font-bold text-stone-800">Excursions and Bioblitz</h4>
+          <p class="text-stone-600">Excursions to natural environments where we identify plant and animal species. We also learn to assess the water quality of our river using bioindicators.</p>
        </div>
      </div>
   </div>
