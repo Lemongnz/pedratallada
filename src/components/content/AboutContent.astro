@@ -1,5 +1,7 @@
 ---
 import { useTranslations } from '../../i18n/utils';
+import { Image } from 'astro:assets';
+import paoloImg from '../../assets/images/paolo.webp';
 import Layout from '../../layouts/Layout.astro';
 
 interface Props {
@@ -19,6 +21,54 @@ const t = useTranslations(lang);
 		<div class="prose prose-stone prose-lg">
 			<p>{t('about.intro')}</p>
 			<p>{t('about.mission')}</p>
+		</div>
+
+		<!-- Director Section -->
+		<div class="mt-16 bg-white rounded-2xl shadow-sm border border-stone-100 overflow-hidden">
+			<div class="md:flex">
+				<div class="md:w-1/3 object-cover">
+					<Image 
+						src={paoloImg} 
+						alt="Dr. Juan Pablo Donadei Corada" 
+						class="w-full h-full object-cover min-h-[300px]"
+                        width={600}
+                        height={800}
+						format="webp"
+						loading="lazy"
+					/>
+				</div>
+				<div class="md:w-2/3 p-8 md:p-10 flex flex-col justify-center">
+					<h2 class="text-3xl font-serif font-bold text-stone-900 mb-2">
+                        {lang === 'es' ? 'Dirección' : lang === 'en' ? 'Director' : 'Direcció'}
+                    </h2>
+					<h3 class="text-xl font-bold text-clay-dark mb-4">
+                        Dr. Juan Pablo Donadei Corada - nº colegiado 3866
+                    </h3>
+					<div class="prose prose-stone prose-md text-stone-600 space-y-4">
+						<p>
+                            {lang === 'ca' 
+                                ? 'Doctor en Arqueologia amb més de 15 anys d\'experiència en investigació, excavació i gestió del patrimoni cultural. Especialista en Prehistòria, anàlisi del territori i estudi dels recursos naturals, combina el rigor científic amb la pràctica professional en arqueologia preventiva i d\'urgència.' 
+                                : lang === 'en'
+                                ? 'PhD in Archaeology with over 15 years of experience in research, excavation, and cultural heritage management. Specialist in Prehistory, territorial analysis, and natural resources study, he combines scientific rigor with professional practice in preventive and emergency archaeology.'
+                                : 'Doctor en Arqueología con más de 15 años de experiencia en investigación, excavación y gestión del patrimonio cultural. Especialista en Prehistoria, análisis del territorio y estudio de los recursos naturales, combina el rigor científico con la práctica profesional en arqueología preventiva y de urgencia.'}
+                        </p>
+						<p>
+                            {lang === 'ca'
+                                ? 'Ha participat en projectes internacionals d\'investigació i en intervencions vinculades a obra civil i infraestructures, garantint una gestió tècnica solvent i ajustada a la normativa vigent.'
+                                : lang === 'en'
+                                ? 'He has participated in international research projects and interventions linked to civil works and infrastructure, ensuring sound technical management in accordance with current regulations.'
+                                : 'Ha participado en proyectos internacionales de investigación y en intervenciones vinculadas a obra civil e infraestructuras, garantizando una gestión técnica solvente y ajustada a la normativa vigente.'}
+                        </p>
+						<p>
+                            {lang === 'ca'
+                                ? 'Director de Pedra Tallada, impulsa a més iniciatives d\'arqueologia experimental i divulgació científica que integren patrimoni, paisatge i sostenibilitat ambiental.'
+                                : lang === 'en'
+                                ? 'Director of Pedra Tallada, he also promotes initiatives in experimental archaeology and scientific outreach that integrate heritage, landscape, and environmental sustainability.'
+                                : 'Director de Pedra Tallada, impulsa además iniciativas de arqueología experimental y divulgación científica que integran patrimonio, paisaje y sostenibilidad ambiental.'}
+                        </p>
+					</div>
+				</div>
+			</div>
 		</div>
 	</section>
 </Layout>

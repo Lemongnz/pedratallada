@@ -8,13 +8,7 @@ date: "Ongoing"
 <div class="space-y-8">
   <div>
     <h3 class="text-2xl font-serif font-bold text-stone-800 mb-4">Didactic Activities</h3>
-    <p>Our PREHISTORY workshop for schools aims to teach students the most outstanding knowledge of prehistoric archaeology through didactic and practical activities.</p>
-    <ul class="list-disc list-inside mt-4 space-y-2 text-stone-700">
-      <li>We explain scientific knowledge adapted to the level of each course in a relaxed and pleasant way.</li>
-      <li>We carry out practical activities with the aim of facilitating their learning.</li>
-      <li>We motivate students in activities of a scientific nature through procedures that encourage curiosity about our society.</li>
-      <li>We create interest and commitment to the archaeological, historical, and environmental heritage that surrounds us.</li>
-    </ul>
+    <p>Our Prehistory workshop for schools and institutes introduces students to prehistoric archaeology through clear scientific explanations adapted to their age, combined with practical activities that facilitate learning, awaken curiosity for science, and foster interest and commitment to our archaeological, historical, and environmental heritage.</p>
   </div>
 
   <div class="bg-stone-50 p-6 rounded-xl border border-stone-200">
@@ -26,12 +20,12 @@ date: "Ongoing"
     <h3 class="text-2xl font-serif font-bold text-stone-800 mb-4">Thematic Axes</h3>
     <div class="grid gap-6 md:grid-cols-2">
       <div class="bg-white p-6 rounded-lg shadow-sm border border-stone-100">
-        <img src="/images/talleres/evolucion.jpg" alt="Human Evolution" class="w-full h-48 object-cover rounded-lg mb-4" />
+        <img src="/images/talleres/head_bone.webp" alt="Human Evolution" class="w-full h-48 object-cover rounded-lg mb-4" />
         <h4 class="font-bold text-xl text-clay-dark mb-2">How did our species evolve?</h4>
         <p class="text-stone-600">We will address general concepts of human evolution over time. Using skull replicas and educational materials will facilitate learning.</p>
       </div>
       <div class="bg-white p-6 rounded-lg shadow-sm border border-stone-100">
-        <img src="/images/talleres/herramientas.jpg" alt="Prehistoric Tools" class="w-full h-48 object-cover rounded-lg mb-4" />
+        <img src="/images/talleres/bone_tools.webp" alt="Prehistoric Tools" class="w-full h-48 object-cover rounded-lg mb-4" />
         <h4 class="font-bold text-xl text-clay-dark mb-2">What tools did they use?</h4>
         <p class="text-stone-600">We will make utensils used for domestic and hunting purposes (arrowheads, bifaces, hand axes).</p>
       </div>

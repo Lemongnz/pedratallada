@@ -8,13 +8,7 @@ date: "En curs"
 <div class="space-y-8">
   <div>
     <h3 class="text-2xl font-serif font-bold text-stone-800 mb-4">Activitats Didàctiques</h3>
-    <p>El nostre taller de PREHISTÒRIA per a escoles i instituts té com a objectiu ensenyar als alumnes els coneixements més destacats de l'arqueologia prehistòrica mitjançant activitats didàctiques i pràctiques.</p>
-    <ul class="list-disc list-inside mt-4 space-y-2 text-stone-700">
-      <li>Expliquem de forma distesa i amena coneixements científics adaptats al nivell de cada curs.</li>
-      <li>Realitzem activitats pràctiques amb l'objectiu de facilitar el seu aprenentatge.</li>
-      <li>Motivem l'alumnat en activitats de caràcter científic a través de procediments que fomentin la curiositat sobre la nostra societat.</li>
-      <li>Creem interès i compromís pel patrimoni arqueològic, històric i mediambiental que ens envolta.</li>
-    </ul>
+    <p>El nostre taller de Prehistòria per a escoles i instituts introdueix l'alumnat en l'arqueologia prehistòrica mitjançant explicacions científiques clares i adaptades a la seva edat, combinades amb activitats pràctiques que faciliten l'aprenentatge, desperten la curiositat per la ciència i fomenten l'interès i el compromís amb el patrimoni arqueològic, històric i mediambiental.</p>
   </div>
 
   <div class="bg-stone-50 p-6 rounded-xl border border-stone-200">
@@ -26,12 +20,12 @@ date: "En curs"
     <h3 class="text-2xl font-serif font-bold text-stone-800 mb-4">Eixos Temàtics</h3>
     <div class="grid gap-6 md:grid-cols-2">
       <div class="bg-white p-6 rounded-lg shadow-sm border border-stone-100">
-        <img src="/images/talleres/evolucion.jpg" alt="Evolució Humana" class="w-full h-48 object-cover rounded-lg mb-4" />
+        <img src="/images/talleres/head_bone.webp" alt="Evolució Humana" class="w-full h-48 object-cover rounded-lg mb-4" />
         <h4 class="font-bold text-xl text-clay-dark mb-2">Com va evolucionar la nostra espècie?</h4>
         <p class="text-stone-600">Abordarem els conceptes generals de l'evolució humana al llarg del temps. L'ús de rèpliques de cranis juntament amb materials didàctics facilitarà l'aprenentatge.</p>
       </div>
       <div class="bg-white p-6 rounded-lg shadow-sm border border-stone-100">
-        <img src="/images/talleres/herramientas.jpg" alt="Eines Prehistòriques" class="w-full h-48 object-cover rounded-lg mb-4" />
+        <img src="/images/talleres/bone_tools.webp" alt="Eines Prehistòriques" class="w-full h-48 object-cover rounded-lg mb-4" />
         <h4 class="font-bold text-xl text-clay-dark mb-2">Quines eines utilitzaven?</h4>
         <p class="text-stone-600">Fabricarem estris usats per a propòsits domèstics i de caça (puntes de fletxa, bifacials, destrals de mà).</p>
       </div>

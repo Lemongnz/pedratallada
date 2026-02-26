@@ -8,13 +8,7 @@ date: "En curso"
 <div class="space-y-8">
   <div>
     <h3 class="text-2xl font-serif font-bold text-stone-800 mb-4">Actividades Didácticas</h3>
-    <p>Nuestro taller de PREHISTORIA para colegios e institutos tiene como objetivo enseñar al alumnado los conocimientos más destacados de la arqueología prehistórica a través de actividades didácticas y prácticas.</p>
-    <ul class="list-disc list-inside mt-4 space-y-2 text-stone-700">
-      <li>Explicamos de forma distendida y amena conocimientos científicos adaptados al nivel de cada curso.</li>
-      <li>Realizamos actividades prácticas con el objetivo de facilitar su aprendizaje.</li>
-      <li>Motivamos al alumnado en actividades de carácter científico a través de procedimientos que fomenten la curiosidad sobre nuestra sociedad.</li>
-      <li>Creamos interés y compromiso por el patrimonio arqueológico, histórico y medioambiental que nos rodea.</li>
-    </ul>
+    <p>Nuestro taller de Prehistoria para colegios e institutos introduce al alumnado en la arqueología prehistórica mediante explicaciones científicas claras y adaptadas a su edad, combinadas con actividades prácticas que facilitan el aprendizaje, despiertan la curiosidad por la ciencia y fomentan el interés y el compromiso con el patrimonio arqueológico, histórico y medioambiental.</p>
   </div>
 
   <div class="bg-stone-50 p-6 rounded-xl border border-stone-200">
@@ -26,12 +20,12 @@ date: "En curso"
     <h3 class="text-2xl font-serif font-bold text-stone-800 mb-4">Ejes Temáticos</h3>
     <div class="grid gap-6 md:grid-cols-2">
       <div class="bg-white p-6 rounded-lg shadow-sm border border-stone-100">
-        <img src="/images/talleres/evolucion.jpg" alt="Evolución Humana" class="w-full h-48 object-cover rounded-lg mb-4" />
+        <img src="/images/talleres/head_bone.webp" alt="Evolución Humana" class="w-full h-48 object-cover rounded-lg mb-4" />
         <h4 class="font-bold text-xl text-clay-dark mb-2">¿Cómo evolucionó nuestra especie?</h4>
         <p class="text-stone-600">Abordaremos los conceptos generales de la evolución humana a lo largo del tiempo. El uso de réplicas de cráneos junto con materiales didácticos facilitará el aprendizaje.</p>
       </div>
       <div class="bg-white p-6 rounded-lg shadow-sm border border-stone-100">
-        <img src="/images/talleres/herramientas.jpg" alt="Herramientas Prehistóricas" class="w-full h-48 object-cover rounded-lg mb-4" />
+        <img src="/images/talleres/bone_tools.webp" alt="Herramientas Prehistóricas" class="w-full h-48 object-cover rounded-lg mb-4" />
         <h4 class="font-bold text-xl text-clay-dark mb-2">¿Qué herramientas utilizaban?</h4>
         <p class="text-stone-600">Fabricaremos utensilios usados para propósitos domésticos y de caza (puntas de flecha, bifaces, hachas de mano).</p>
       </div>
