@@ -50,25 +50,31 @@ const localizePath = (path: string) => {
             
             <!-- Left Half: Archaeology -->
             <a href={localizePath('/arqueologia')} class="flex-1 relative group flex flex-col items-center justify-center p-8 text-center outline-none focus-visible:ring-4 focus-visible:ring-clay-light focus-visible:ring-inset cursor-pointer no-underline text-stone-50">
-                <div class="bg-stone-900/20 backdrop-blur-[2px] px-12 py-6 rounded-full mb-6 shadow-2xl transition-all duration-300">
+                <div class="bg-stone-900/40 backdrop-blur-sm px-12 py-6 rounded-full mb-6 shadow-2xl transition-all duration-300 flex flex-col items-center">
                     <h1 class="text-4xl md:text-5xl lg:text-7xl font-serif leading-tight drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)] group-hover:scale-[1.02] group-focus-visible:scale-[1.02] transition-transform duration-500 m-0">
-                        {t('archaeology.title')}
+                        {t('nav.archaeology')}
                     </h1>
                 </div>
-                <span class="inline-block bg-white text-stone-900 px-8 py-3 rounded-full font-semibold shadow-lg shadow-black/20 group-hover:-translate-y-1 group-focus-visible:-translate-y-1 transition-transform duration-300">
-                    {t('projects.read_more')}
+                <span class="inline-flex items-center justify-center bg-white text-stone-900 px-8 py-3 rounded-full font-bold uppercase tracking-wider text-sm shadow-lg shadow-black/20 group-hover:-translate-y-1 group-focus-visible:-translate-y-1 transition-all duration-300">
+                    {t('archaeology.title')}
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-0 opacity-0 group-hover:w-4 group-hover:opacity-100 group-hover:ml-2 transition-all duration-300 -mr-2 group-hover:mr-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
                 </span>
             </a>
 
             <!-- Right Half: Education/Outreach -->
             <a href={localizePath('/educacion')} class="flex-1 relative group flex flex-col items-center justify-center p-8 text-center outline-none focus-visible:ring-4 focus-visible:ring-clay-light focus-visible:ring-inset cursor-pointer no-underline text-stone-50">
-                <div class="bg-stone-900/20 backdrop-blur-[2px] px-12 py-6 rounded-full mb-6 shadow-2xl transition-all duration-300">
+                <div class="bg-stone-900/40 backdrop-blur-sm px-12 py-6 rounded-full mb-6 shadow-2xl transition-all duration-300 flex flex-col items-center">
                     <h1 class="text-4xl md:text-5xl lg:text-7xl font-serif leading-tight drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)] group-hover:scale-[1.02] group-focus-visible:scale-[1.02] transition-transform duration-500 m-0">
-                        {t('project.educacion.title')}
+                        {t('nav.outreach')}
                     </h1>
                 </div>
-                <span class="inline-block bg-stone-100/90 backdrop-blur-sm text-stone-900 px-8 py-3 rounded-full font-semibold shadow-lg shadow-black/20 group-hover:-translate-y-1 group-focus-visible:-translate-y-1 transition-transform duration-300">
-                    {t('projects.read_more')}
+                <span class="inline-flex items-center justify-center bg-stone-100/90 backdrop-blur-sm text-stone-900 px-8 py-3 rounded-full font-bold uppercase tracking-wider text-sm shadow-lg shadow-black/20 group-hover:-translate-y-1 group-focus-visible:-translate-y-1 transition-all duration-300">
+                    {t('project.educacion.title')}
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-0 opacity-0 group-hover:w-4 group-hover:opacity-100 group-hover:ml-2 transition-all duration-300 -mr-2 group-hover:mr-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
                 </span>
             </a>
 
@@ -105,9 +111,12 @@ const localizePath = (path: string) => {
                     </div>
                     
                     <div class="p-6 flex flex-col flex-1">
-                        <h3 class="text-2xl font-serif font-bold text-stone-900 mb-3 group-hover:text-clay-dark transition-colors">
-                            {t('archaeology.title')}
+                        <h3 class="text-2xl font-serif font-bold text-stone-900 mb-1 group-hover:text-clay-dark transition-colors">
+                            {t('nav.archaeology')}
                         </h3>
+                        <p class="text-clay-dark font-bold uppercase tracking-wider text-xs mb-3">
+                            {t('archaeology.title')}
+                        </p>
                         <p class="text-stone-600 mb-6 text-base leading-relaxed grow">
                             {t('archaeology.intro')}
                         </p>
@@ -136,9 +145,12 @@ const localizePath = (path: string) => {
                     </div>
                     
                     <div class="p-6 flex flex-col flex-1">
-                        <h3 class="text-2xl font-serif font-bold text-stone-900 mb-3 group-hover:text-clay-dark transition-colors">
-                            {t('project.educacion.title')}
+                        <h3 class="text-2xl font-serif font-bold text-stone-900 mb-1 group-hover:text-clay-dark transition-colors">
+                            {t('nav.outreach')}
                         </h3>
+                        <p class="text-clay-dark font-bold uppercase tracking-wider text-xs mb-3">
+                            {t('project.educacion.title')}
+                        </p>
                         <p class="text-stone-600 mb-6 text-base leading-relaxed grow">
                             {t('project.educacion.desc')}
                         </p>
