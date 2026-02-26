@@ -1,6 +1,8 @@
 ---
 import { useTranslations } from '../../i18n/utils';
 import Layout from '../../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import puntasFlechaImg from '../../assets/images/puntas_flecha.webp';
 
 interface Props {
   lang: 'es' | 'en' | 'ca';
@@ -14,19 +16,28 @@ const t = useTranslations(lang);
 	title={`${t('privacy.title')} | Pedra Tallada`}
 	description={t('privacy.title')}
 >
-	<section class="max-w-3xl mx-auto py-12 md:py-20 px-4">
-		<h1 class="text-3xl md:text-4xl font-serif text-stone-900 mb-8">{t('privacy.title')}</h1>
-		<div class="prose prose-stone">
-			<p>{t('privacy.intro')}</p>
+	<section class="max-w-4xl mx-auto pt-6 pb-12 md:pt-10 md:pb-20 px-4">
+		<h1 class="text-3xl md:text-5xl font-serif text-stone-900 mb-8 text-center">{t('privacy.title')}</h1>
+        
+        <Image 
+            src={puntasFlechaImg} 
+            alt="Puntas de flecha arqueológicas" 
+            class="w-full h-48 md:h-80 object-cover rounded-3xl mb-12 shadow-lg" 
+            quality={80} 
+            format="webp" 
+        />
+
+		<div class="text-stone-700 text-lg mx-auto space-y-6">
+			<p set:html={t('privacy.intro')} class="leading-relaxed" />
 			
-            <h3>{t('privacy.collection_title')}</h3>
-			<p>{t('privacy.collection_text')}</p>
+            <h3 class="text-2xl font-serif font-bold text-clay-dark pt-4">{t('privacy.collection_title')}</h3>
+			<p set:html={t('privacy.collection_text')} class="leading-relaxed" />
 			
-            <h3>{t('privacy.use_title')}</h3>
-			<p>{t('privacy.use_text')}</p>
+            <h3 class="text-2xl font-serif font-bold text-clay-dark pt-4">{t('privacy.use_title')}</h3>
+			<p set:html={t('privacy.use_text')} class="leading-relaxed" />
 			
-            <h3>Contact</h3>
-			<p>{t('privacy.contact')}</p>
+            <h3 class="text-2xl font-serif font-bold text-clay-dark pt-4">{t('privacy.contact_title')}</h3>
+			<p set:html={t('privacy.contact')} class="leading-relaxed" />
 		</div>
 	</section>
 </Layout>

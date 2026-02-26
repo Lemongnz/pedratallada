@@ -1,6 +1,11 @@
 ---
 import { useTranslations } from '../../i18n/utils';
 import Layout from '../../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+
+import imgExcavacion from '../../assets/images/arq_urb_2.webp';
+import imgDivulgacion from '../../assets/images/education_card.webp';
+import imgConsultoria from '../../assets/images/laboratorio.webp';
 
 interface Props {
   lang: 'es' | 'en' | 'ca';
@@ -14,27 +19,48 @@ const t = useTranslations(lang);
 	title={`${t('services.title')} | Pedra Tallada`}
 	description={t('services.title')}
 >
-	<section class="max-w-4xl mx-auto py-12 md:py-20 px-4">
-		<h1 class="text-4xl md:text-5xl font-serif text-stone-900 mb-8">{t('services.title')}</h1>
-		<div class="grid md:grid-cols-2 gap-8">
-            <div class="bg-white p-8 rounded-xl shadow-sm border border-stone-100">
-                <h2 class="text-2xl font-serif text-stone-900 mb-4">{t('services.item1.title')}</h2>
-                <p class="text-stone-600">{t('services.item1.desc')}</p>
+	<section class="max-w-7xl mx-auto pt-12 pb-20 md:pt-20 md:pb-32 px-4">
+        <div class="text-center mb-16 md:mb-24">
+		    <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif text-stone-900 mb-6">{t('services.title')}</h1>
+            <div class="h-1 w-24 bg-clay-dark mx-auto rounded-full"></div>
+        </div>
+
+		<div class="grid md:grid-cols-3 gap-8 md:gap-12">
+            <!-- Excavaciones -->
+            <div class="bg-white rounded-3xl shadow-xl border border-stone-100 overflow-hidden group hover:-translate-y-2 transition-transform duration-500 flex flex-col">
+                <div class="relative h-64 overflow-hidden">
+                    <Image src={imgExcavacion} alt={t('services.item1.title')} class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" quality={80} format="webp" />
+                    <div class="absolute inset-0 bg-linear-to-t from-black/60 via-black/10 to-transparent"></div>
+                </div>
+                <div class="p-8 md:p-10 flex-1 flex flex-col bg-stone-50">
+                    <h2 class="text-2xl font-serif font-bold text-stone-900 mb-4 group-hover:text-clay-dark transition-colors">{t('services.item1.title')}</h2>
+                    <p class="text-stone-600 leading-relaxed font-medium">{t('services.item1.desc')}</p>
+                </div>
             </div>
-            <div class="bg-white p-8 rounded-xl shadow-sm border border-stone-100">
-                <h2 class="text-2xl font-serif text-stone-900 mb-4">{t('services.item2.title')}</h2>
-                <p class="text-stone-600">{t('services.item2.desc')}</p>
+
+            <!-- Divulgación -->
+            <div class="bg-white rounded-3xl shadow-xl border border-stone-100 overflow-hidden group hover:-translate-y-2 transition-transform duration-500 flex flex-col">
+                <div class="relative h-64 overflow-hidden">
+                    <Image src={imgDivulgacion} alt={t('services.item2.title')} class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" quality={80} format="webp" />
+                    <div class="absolute inset-0 bg-linear-to-t from-black/60 via-black/10 to-transparent"></div>
+                </div>
+                <div class="p-8 md:p-10 flex-1 flex flex-col bg-stone-50">
+                    <h2 class="text-2xl font-serif font-bold text-stone-900 mb-4 group-hover:text-clay-dark transition-colors">{t('services.item2.title')}</h2>
+                    <p class="text-stone-600 leading-relaxed font-medium">{t('services.item2.desc')}</p>
+                </div>
             </div>
-            <div class="bg-white p-8 rounded-xl shadow-sm border border-stone-100">
-                <h2 class="text-2xl font-serif text-stone-900 mb-4">{t('services.item3.title')}</h2>
-                <p class="text-stone-600">{t('services.item3.desc')}</p>
-            </div>
-            <div class="bg-white p-8 rounded-xl shadow-sm border border-stone-100">
-                <h2 class="text-2xl font-serif text-stone-900 mb-4">{t('services.item4.title')}</h2>
-                <p class="text-stone-600">{t('services.item4.desc')}</p>
+
+            <!-- Consultoría -->
+            <div class="bg-white rounded-3xl shadow-xl border border-stone-100 overflow-hidden group hover:-translate-y-2 transition-transform duration-500 flex flex-col">
+                <div class="relative h-64 overflow-hidden">
+                    <Image src={imgConsultoria} alt={t('services.item3.title')} class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" quality={80} format="webp" />
+                    <div class="absolute inset-0 bg-linear-to-t from-black/60 via-black/10 to-transparent"></div>
+                </div>
+                <div class="p-8 md:p-10 flex-1 flex flex-col bg-stone-50">
+                    <h2 class="text-2xl font-serif font-bold text-stone-900 mb-4 group-hover:text-clay-dark transition-colors">{t('services.item3.title')}</h2>
+                    <p class="text-stone-600 leading-relaxed font-medium">{t('services.item3.desc')}</p>
+                </div>
             </div>
 		</div>
-	</section>
-</Layout>
 	</section>
 </Layout>

@@ -5,7 +5,7 @@ import { useTranslations } from '../i18n/utils';
 
 // Images
 import heroImg from '../assets/images/hero.webp'; // Hero base
-import headBoneImg from '../assets/images/arch_camp.webp'; // Arqueología
+import arcLandImg from '../assets/images/arc_land.webp'; // Arqueología
 import educationImg from '../assets/images/education_card.webp'; // Educación Card
 import campImg from '../assets/images/camp.webp'; // Campamento Card
 
@@ -35,27 +35,29 @@ const localizePath = (path: string) => {
 	<!-- Split Hero Section -->
 	<section class="relative min-h-[85svh] md:min-h-[90svh] flex flex-col md:flex-row bg-stone-900 overflow-hidden isolate">
         
-        <!-- Background Image Cover -->
-        <Image 
-            src={heroImg} 
-            alt="Pedra Tallada - Arqueología y Divulgación" 
-            class="absolute inset-0 w-full h-full object-cover z-0"
-            quality={80}
-            format="webp"
-            loading="eager"
-        />
+        <!-- Background Image Cover with Placeholder -->
+        <div class="absolute inset-0 z-0 bg-stone-800">
+            <Image 
+                src={heroImg} 
+                alt="Pedra Tallada - Arqueología y Divulgación" 
+                class="absolute inset-0 w-full h-full object-cover animate-fade-in opacity-0"
+                quality={80}
+                format="webp"
+                loading="eager"
+            />
+        </div>
 
         <!-- Overlay Split Container -->
         <div class="absolute inset-0 z-10 flex flex-col md:flex-row">
             
             <!-- Left Half: Archaeology -->
-            <a href={localizePath('/arqueologia')} class="flex-1 relative group flex flex-col items-center justify-center p-8 text-center outline-none focus-visible:ring-4 focus-visible:ring-clay-light focus-visible:ring-inset cursor-pointer no-underline text-stone-50">
-                <div class="bg-stone-900/40 backdrop-blur-sm px-12 py-6 rounded-full mb-6 shadow-2xl transition-all duration-300 flex flex-col items-center">
-                    <h1 class="text-4xl md:text-5xl lg:text-7xl font-serif leading-tight drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)] group-hover:scale-[1.02] group-focus-visible:scale-[1.02] transition-transform duration-500 m-0">
+            <a href={localizePath('/arqueologia')} class="flex-1 relative group flex flex-col items-center justify-center p-4 md:p-8 text-center outline-none focus-visible:ring-4 focus-visible:ring-clay-light focus-visible:ring-inset cursor-pointer no-underline text-stone-50">
+                <div class="bg-stone-900/40 backdrop-blur-sm px-6 py-3 md:px-12 md:py-6 rounded-4xl md:rounded-full mb-3 md:mb-6 shadow-2xl transition-all duration-300 flex flex-col items-center">
+                    <h1 class="text-3xl md:text-5xl lg:text-7xl font-serif leading-tight drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)] group-hover:scale-[1.02] group-focus-visible:scale-[1.02] transition-transform duration-500 m-0">
                         {t('nav.archaeology')}
                     </h1>
                 </div>
-                <span class="inline-flex items-center justify-center bg-white text-stone-900 px-8 py-3 rounded-full font-bold uppercase tracking-wider text-sm shadow-lg shadow-black/20 group-hover:-translate-y-1 group-focus-visible:-translate-y-1 transition-all duration-300">
+                <span class="inline-flex items-center justify-center bg-white text-stone-900 px-6 py-2.5 md:px-8 md:py-3 rounded-full font-bold uppercase tracking-wider text-xs md:text-sm shadow-lg shadow-black/20 group-hover:-translate-y-1 group-focus-visible:-translate-y-1 transition-all duration-300">
                     {t('archaeology.title')}
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-0 opacity-0 group-hover:w-4 group-hover:opacity-100 group-hover:ml-2 transition-all duration-300 -mr-2 group-hover:mr-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -64,13 +66,13 @@ const localizePath = (path: string) => {
             </a>
 
             <!-- Right Half: Education/Outreach -->
-            <a href={localizePath('/educacion')} class="flex-1 relative group flex flex-col items-center justify-center p-8 text-center outline-none focus-visible:ring-4 focus-visible:ring-clay-light focus-visible:ring-inset cursor-pointer no-underline text-stone-50">
-                <div class="bg-stone-900/40 backdrop-blur-sm px-12 py-6 rounded-full mb-6 shadow-2xl transition-all duration-300 flex flex-col items-center">
-                    <h1 class="text-4xl md:text-5xl lg:text-7xl font-serif leading-tight drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)] group-hover:scale-[1.02] group-focus-visible:scale-[1.02] transition-transform duration-500 m-0">
+            <a href={localizePath('/educacion')} class="flex-1 relative group flex flex-col items-center justify-center p-4 md:p-8 text-center outline-none focus-visible:ring-4 focus-visible:ring-clay-light focus-visible:ring-inset cursor-pointer no-underline text-stone-50">
+                <div class="bg-stone-900/40 backdrop-blur-sm px-6 py-3 md:px-12 md:py-6 rounded-4xl md:rounded-full mb-3 md:mb-6 shadow-2xl transition-all duration-300 flex flex-col items-center">
+                    <h1 class="text-3xl md:text-5xl lg:text-7xl font-serif leading-tight drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)] group-hover:scale-[1.02] group-focus-visible:scale-[1.02] transition-transform duration-500 m-0">
                         {t('nav.outreach')}
                     </h1>
                 </div>
-                <span class="inline-flex items-center justify-center bg-stone-100/90 backdrop-blur-sm text-stone-900 px-8 py-3 rounded-full font-bold uppercase tracking-wider text-sm shadow-lg shadow-black/20 group-hover:-translate-y-1 group-focus-visible:-translate-y-1 transition-all duration-300">
+                <span class="inline-flex items-center justify-center bg-stone-100/90 backdrop-blur-sm text-stone-900 px-6 py-2.5 md:px-8 md:py-3 rounded-full font-bold uppercase tracking-wider text-xs md:text-sm shadow-lg shadow-black/20 group-hover:-translate-y-1 group-focus-visible:-translate-y-1 transition-all duration-300">
                     {t('project.educacion.title')}
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-0 opacity-0 group-hover:w-4 group-hover:opacity-100 group-hover:ml-2 transition-all duration-300 -mr-2 group-hover:mr-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -97,7 +99,7 @@ const localizePath = (path: string) => {
                  <a href={localizePath('/arqueologia')} class="bg-white rounded-xl overflow-hidden border border-stone-100 shadow-sm hover:shadow-xl hover:shadow-stone-200/50 transition-all duration-300 group flex flex-col h-full cursor-pointer">
                     <div class="relative overflow-hidden aspect-video">
                         <Image 
-                            src={headBoneImg} 
+                            src={arcLandImg} 
                             alt="Servicios Arqueología"
                             class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
                             width={800}
@@ -202,7 +204,7 @@ const localizePath = (path: string) => {
                 <div class="h-1 w-20 bg-clay-dark mx-auto rounded-full"></div>
             </div>
             
-            <div class="flex flex-wrap justify-center items-center gap-12 md:gap-20 grayscale hover:grayscale-0 transition-all duration-500 opacity-70 hover:opacity-100">
+            <div class="flex flex-wrap justify-center items-center gap-12 md:gap-20 grayscale-0 md:grayscale md:hover:grayscale-0 transition-all duration-500 opacity-100 md:opacity-70 md:hover:opacity-100">
                 <Image src={logoAltea} alt="Ayuntamiento de Altea" class="h-16 md:h-20 w-auto object-contain" />
                 <Image src={logoUv} alt="Universidad de Valencia" class="h-16 md:h-20 w-auto object-contain" />
                 <Image src={logoMupreva} alt="Museo de Prehistoria de Valencia" class="h-16 md:h-20 w-auto object-contain" />
@@ -226,4 +228,19 @@ const localizePath = (path: string) => {
     </div>
 </Layout>
 
+<style>
+    .animate-fade-in {
+        animation: fadeIn 1.5s ease-in-out forwards;
+    }
 
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: scale(1.05);
+        }
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+</style>

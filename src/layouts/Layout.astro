@@ -92,7 +92,7 @@ const localizePath = (path: string) => {
 					<a href={localizePath('/arqueologia')} class="text-stone-800 hover:text-clay-dark font-bold py-3 text-lg uppercase tracking-wider border-b border-stone-200">{t('nav.archaeology')}</a>
                     
                     <div class="py-2">
-                        <span class="text-stone-400 text-xs font-bold uppercase tracking-wider mb-2 block">{t('nav.outreach')}</span>
+                        <span class="text-stone-800 font-bold text-lg uppercase tracking-wider mb-3 pb-2 border-b border-stone-200 block">{t('nav.outreach')}</span>
                         <div class="flex flex-col gap-1">
                             <a href={localizePath('/educacion')} class="text-stone-600 hover:text-clay-dark font-medium py-2 px-4 rounded-lg hover:bg-stone-200/50 transition-colors uppercase tracking-wide text-sm">{t('nav.education')}</a>
                             <a href={localizePath('/campamento-arqueologia')} class="text-stone-600 hover:text-clay-dark font-medium py-2 px-4 rounded-lg hover:bg-stone-200/50 transition-colors uppercase tracking-wide text-sm">{t('nav.camping')}</a>
@@ -109,12 +109,12 @@ const localizePath = (path: string) => {
 			</div>
 		</header>
 
-		<main class={`flex-grow ${useMainContainer ? 'container mx-auto px-4 py-8 md:py-12' : ''}`}>
+		<main class={`grow ${useMainContainer ? 'container mx-auto px-4 py-8 md:py-12' : ''}`}>
 			<slot />
 		</main>
 
 		<footer class="bg-stone-900 text-stone-400 py-12 mt-auto">
-			<div class="container mx-auto px-4 grid md:grid-cols-3 gap-8">
+			<div class="container mx-auto px-4 grid md:grid-cols-3 gap-8 text-center md:text-left">
 				<div>
 					<h3 class="text-stone-200 font-serif font-bold text-xl mb-4">PEDRATALLADA</h3>
 					<p class="text-sm leading-relaxed">
@@ -132,7 +132,7 @@ const localizePath = (path: string) => {
 				<div>
 					<h4 class="text-stone-200 font-bold mb-4">{t('nav.contact')}</h4>
 					<p class="text-sm">arqueopedratallada@gmail.com</p>
-					<div class="flex gap-4 mt-4">
+					<div class="flex gap-4 mt-4 justify-center md:justify-start">
 						<a href="https://www.facebook.com/profile.php?id=100093317785372&locale=es_ES" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-stone-800 rounded-full flex items-center justify-center text-stone-400 hover:text-white hover:bg-clay-dark transition-all duration-300" aria-label="Facebook">
 							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 								<path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
@@ -162,15 +162,21 @@ const localizePath = (path: string) => {
 		</footer>
 
 		<script>
-			// Mobile Menu Logic
-			const menuToggle = document.getElementById('menu-toggle');
-			const mobileMenu = document.getElementById('mobile-menu');
+			// Mobile Menu Logic with ViewTransitions support
+			document.addEventListener('astro:page-load', () => {
+				const menuToggle = document.getElementById('menu-toggle');
+				const mobileMenu = document.getElementById('mobile-menu');
 
-			if (menuToggle && mobileMenu) {
-				menuToggle.addEventListener('click', () => {
-					mobileMenu.classList.toggle('hidden');
-				});
-			}
+				if (menuToggle && mobileMenu && menuToggle.parentNode) {
+					// Remove existing listeners to prevent duplicates on hot-swaps
+					const newToggle = menuToggle.cloneNode(true);
+					menuToggle.parentNode.replaceChild(newToggle, menuToggle);
+
+					newToggle.addEventListener('click', () => {
+						mobileMenu.classList.toggle('hidden');
+					});
+				}
+			});
 		</script>
 	</body>
 </html>
