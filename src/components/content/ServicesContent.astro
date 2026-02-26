@@ -25,40 +25,40 @@ const t = useTranslations(lang);
             <div class="h-1 w-24 bg-clay-dark mx-auto rounded-full"></div>
         </div>
 
-		<div class="grid md:grid-cols-3 gap-8 md:gap-12">
-            <!-- Excavaciones -->
-            <div class="bg-white rounded-3xl shadow-xl border border-stone-100 overflow-hidden group hover:-translate-y-2 transition-transform duration-500 flex flex-col">
-                <div class="relative h-64 overflow-hidden">
-                    <Image src={imgExcavacion} alt={t('services.item1.title')} class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" quality={80} format="webp" />
-                    <div class="absolute inset-0 bg-linear-to-t from-black/60 via-black/10 to-transparent"></div>
+		<div class="flex flex-col gap-16 md:gap-24">
+            <!-- Excavaciones (Image Left) -->
+            <div class="flex flex-col md:flex-row items-center gap-8 md:gap-16 group">
+                <div class="w-full md:w-1/2 relative h-80 md:h-112 rounded-3xl overflow-hidden shadow-2xl">
+                    <Image src={imgExcavacion} alt={t('services.item1.title')} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" quality={80} format="webp" />
+                    <div class="absolute inset-0 bg-linear-to-t from-black/50 via-transparent to-transparent"></div>
                 </div>
-                <div class="p-8 md:p-10 flex-1 flex flex-col bg-stone-50">
-                    <h2 class="text-2xl font-serif font-bold text-stone-900 mb-4 group-hover:text-clay-dark transition-colors">{t('services.item1.title')}</h2>
-                    <p class="text-stone-600 leading-relaxed font-medium">{t('services.item1.desc')}</p>
-                </div>
-            </div>
-
-            <!-- Divulgación -->
-            <div class="bg-white rounded-3xl shadow-xl border border-stone-100 overflow-hidden group hover:-translate-y-2 transition-transform duration-500 flex flex-col">
-                <div class="relative h-64 overflow-hidden">
-                    <Image src={imgDivulgacion} alt={t('services.item2.title')} class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" quality={80} format="webp" />
-                    <div class="absolute inset-0 bg-linear-to-t from-black/60 via-black/10 to-transparent"></div>
-                </div>
-                <div class="p-8 md:p-10 flex-1 flex flex-col bg-stone-50">
-                    <h2 class="text-2xl font-serif font-bold text-stone-900 mb-4 group-hover:text-clay-dark transition-colors">{t('services.item2.title')}</h2>
-                    <p class="text-stone-600 leading-relaxed font-medium">{t('services.item2.desc')}</p>
+                <div class="w-full md:w-1/2 flex flex-col justify-center">
+                    <h2 class="text-3xl md:text-4xl font-serif font-bold text-stone-900 mb-6">{t('services.item1.title')}</h2>
+                    <p class="text-stone-600 text-lg leading-relaxed">{t('services.item1.desc')}</p>
                 </div>
             </div>
 
-            <!-- Consultoría -->
-            <div class="bg-white rounded-3xl shadow-xl border border-stone-100 overflow-hidden group hover:-translate-y-2 transition-transform duration-500 flex flex-col">
-                <div class="relative h-64 overflow-hidden">
-                    <Image src={imgConsultoria} alt={t('services.item3.title')} class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" quality={80} format="webp" />
-                    <div class="absolute inset-0 bg-linear-to-t from-black/60 via-black/10 to-transparent"></div>
+            <!-- Divulgación (Image Right) -->
+            <div class="flex flex-col md:flex-row-reverse items-center gap-8 md:gap-16 group">
+                <div class="w-full md:w-1/2 relative h-80 md:h-112 rounded-3xl overflow-hidden shadow-2xl md:ml-auto">
+                    <Image src={imgDivulgacion} alt={t('services.item2.title')} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" quality={80} format="webp" />
+                    <div class="absolute inset-0 bg-linear-to-t from-black/50 via-transparent to-transparent"></div>
                 </div>
-                <div class="p-8 md:p-10 flex-1 flex flex-col bg-stone-50">
-                    <h2 class="text-2xl font-serif font-bold text-stone-900 mb-4 group-hover:text-clay-dark transition-colors">{t('services.item3.title')}</h2>
-                    <p class="text-stone-600 leading-relaxed font-medium">{t('services.item3.desc')}</p>
+                <div class="w-full md:w-1/2 flex flex-col justify-center">
+                    <h2 class="text-3xl md:text-4xl font-serif font-bold text-stone-900 mb-6">{t('services.item2.title')}</h2>
+                    <p class="text-stone-600 text-lg leading-relaxed">{t('services.item2.desc')}</p>
+                </div>
+            </div>
+
+            <!-- Consultoría (Image Left) -->
+            <div class="flex flex-col md:flex-row items-center gap-8 md:gap-16 group">
+                <div class="w-full md:w-1/2 relative h-80 md:h-112 rounded-3xl overflow-hidden shadow-2xl">
+                    <Image src={imgConsultoria} alt={t('services.item3.title')} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" quality={80} format="webp" />
+                    <div class="absolute inset-0 bg-linear-to-t from-black/50 via-transparent to-transparent"></div>
+                </div>
+                <div class="w-full md:w-1/2 flex flex-col justify-center">
+                    <h2 class="text-3xl md:text-4xl font-serif font-bold text-stone-900 mb-6">{t('services.item3.title')}</h2>
+                    <p class="text-stone-600 text-lg leading-relaxed">{t('services.item3.desc')}</p>
                 </div>
             </div>
 		</div>
