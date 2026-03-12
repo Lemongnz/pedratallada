@@ -86,7 +86,7 @@ const contactLink = lang === 'en' || lang === 'ca' ? `/${lang}/contacto` : '/con
                 <a href={homeLink} class="inline-flex items-center gap-2 text-stone-500 hover:text-clay-dark font-medium transition-colors">
                     {t('projects.back_home')}
                 </a>
-                <a href={contactLink} class="inline-block bg-stone-900 text-white px-6 py-3 rounded-lg font-bold hover:bg-stone-800 transition-colors">
+                <a href={contactLink} class="inline-block bg-stone-900 text-white px-6 py-3 rounded-lg font-bold hover:bg-stone-800 transition-colors" data-analytics-event="cta_click" data-analytics-payload={JSON.stringify({ cta: `project-${project.slug}`, lang })}>
                     {t('projects.check_availability')}
                 </a>
             </div>
