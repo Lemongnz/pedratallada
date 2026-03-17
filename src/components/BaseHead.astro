@@ -6,11 +6,23 @@ interface Props {
 	title: string;
 	description: string;
 	image?: string;
+	lang?: string;
+	alternates?: Array<{ hrefLang: string; href: string }>;
+	structuredData?: Record<string, unknown> | Array<Record<string, unknown>>;
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const { title, description, image = '/favicon.png' } = Astro.props;
+const {
+	title,
+	description,
+	image = '/favicon.png',
+	lang = 'es',
+	alternates = [],
+	structuredData = [],
+} = Astro.props;
+
+const schemaItems = Array.isArray(structuredData) ? structuredData : [structuredData];
 ---
 
 <!-- Global Metadata -->
@@ -18,6 +30,7 @@ const { title, description, image = '/favicon.png' } = Astro.props;
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <link rel="icon" type="image/png" href="/favicon.png" />
 <meta name="generator" content={Astro.generator} />
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
 
 <!-- Font Preloading (Google Fonts: Inter & Playfair Display) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,25 +39,36 @@ const { title, description, image = '/favicon.png' } = Astro.props;
 
 <!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />
+{alternates.map((alternate) => (
+	<link rel="alternate" hreflang={alternate.hrefLang} href={alternate.href} />
+))}
 
 <!-- Primary Meta Tags -->
 <title>{title}</title>
 <meta name="title" content={title} />
 <meta name="description" content={description} />
+<meta name="language" content={lang} />
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />
-<meta property="og:url" content={Astro.url} />
+<meta property="og:url" content={canonicalURL} />
+<meta property="og:site_name" content="Pedra Tallada" />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
-<meta property="og:image" content={new URL(image, Astro.url)} />
+<meta property="og:image" content={new URL(image, canonicalURL)} />
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:url" content={Astro.url} />
+<meta property="twitter:url" content={canonicalURL} />
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
-<meta property="twitter:image" content={new URL(image, Astro.url)} />
+<meta property="twitter:image" content={new URL(image, canonicalURL)} />
+
+{schemaItems
+	.filter((item) => Object.keys(item).length > 0)
+	.map((item) => (
+		<script type="application/ld+json" set:html={JSON.stringify(item)} />
+	))}
 
 <!-- View Transitions -->
 <Analytics />
