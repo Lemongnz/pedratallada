@@ -69,6 +69,12 @@ date: "Ongoing"
        <li>AIS Altea International School</li>
        <li>Ayuntamiento de Altea</li>
        <li>ONG De Amicita</li>
+       <li>IES Thader (Novelda)</li>
+       <li>CEIP Francisco Giner de los Ríos (Valencia)</li>
+       <li>CP Racó de l'Albir (Alfas del Pí)</li>
+       <li>CEIP Vicente Blasco Ibáñez (Elche)</li>
+       <li>CEIP Les Rotes (Altea)</li>
+       <li>Museo Arqueológico de Ibiza y Formentera (MAEF)</li>
      </ul>
   </div>
 </div>

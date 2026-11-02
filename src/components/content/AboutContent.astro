@@ -10,6 +10,17 @@ interface Props {
 
 const { lang } = Astro.props;
 const t = useTranslations(lang);
+
+const orcidUrl = 'https://orcid.org/0000-0003-3130-8537';
+const instagramUrl = 'https://www.instagram.com/pedra_tallada/';
+const profileLinks = [
+    { label: 'ORCID', href: orcidUrl },
+    { label: 'ResearchGate', href: 'https://www.researchgate.net/profile/Juan-Pablo-Donadei' },
+    { label: 'Academia.edu', href: 'https://eraseunavezerase.academia.edu/JuanPabloDonadei' },
+    { label: 'Instagram', href: instagramUrl },
+    { label: 'Facebook', href: 'https://www.facebook.com/profile.php?id=100093317785372&locale=es_ES' },
+];
+const inlineLinkClass = 'font-bold text-clay-dark underline underline-offset-2 hover:text-stone-900';
 ---
 
 <Layout
@@ -46,11 +57,11 @@ const t = useTranslations(lang);
                     </h3>
 					<div class="prose prose-stone prose-md text-stone-600 space-y-4">
 						<p>
-                            {lang === 'ca' 
-                                ? 'Doctor en Arqueologia amb més de 15 anys d\'experiència en investigació, excavació i gestió del patrimoni cultural. Especialista en Prehistòria, anàlisi del territori i estudi dels recursos naturals, combina el rigor científic amb la pràctica professional en arqueologia preventiva i d\'urgència.' 
+                            {lang === 'ca'
+                                ? <Fragment>Doctor en Arqueologia amb més de 15 anys d'experiència en <a href={orcidUrl} target="_blank" rel="noopener noreferrer" class={inlineLinkClass}>investigació</a>, excavació i gestió del patrimoni cultural. Especialista en Prehistòria, anàlisi del territori i estudi dels recursos naturals, combina el rigor científic amb la pràctica professional en arqueologia preventiva i d'urgència.</Fragment>
                                 : lang === 'en'
-                                ? 'PhD in Archaeology with over 15 years of experience in research, excavation, and cultural heritage management. Specialist in Prehistory, territorial analysis, and natural resources study, he combines scientific rigor with professional practice in preventive and emergency archaeology.'
-                                : 'Doctor en Arqueología con más de 15 años de experiencia en investigación, excavación y gestión del patrimonio cultural. Especialista en Prehistoria, análisis del territorio y estudio de los recursos naturales, combina el rigor científico con la práctica profesional en arqueología preventiva y de urgencia.'}
+                                ? <Fragment>PhD in Archaeology with over 15 years of experience in <a href={orcidUrl} target="_blank" rel="noopener noreferrer" class={inlineLinkClass}>research</a>, excavation, and cultural heritage management. Specialist in Prehistory, territorial analysis, and natural resources study, he combines scientific rigor with professional practice in preventive and emergency archaeology.</Fragment>
+                                : <Fragment>Doctor en Arqueología con más de 15 años de experiencia en <a href={orcidUrl} target="_blank" rel="noopener noreferrer" class={inlineLinkClass}>investigación</a>, excavación y gestión del patrimonio cultural. Especialista en Prehistoria, análisis del territorio y estudio de los recursos naturales, combina el rigor científico con la práctica profesional en arqueología preventiva y de urgencia.</Fragment>}
                         </p>
 						<p>
                             {lang === 'ca'
@@ -61,12 +72,21 @@ const t = useTranslations(lang);
                         </p>
 						<p>
                             {lang === 'ca'
-                                ? 'Director de Pedra Tallada, impulsa a més iniciatives d\'arqueologia experimental i divulgació científica que integren patrimoni, paisatge i sostenibilitat ambiental.'
+                                ? <Fragment>Director de Pedra Tallada, impulsa a més <a href={instagramUrl} target="_blank" rel="noopener noreferrer" class={inlineLinkClass}>iniciatives d'arqueologia experimental i divulgació científica</a> que integren patrimoni, paisatge i sostenibilitat ambiental.</Fragment>
                                 : lang === 'en'
-                                ? 'Director of Pedra Tallada, he also promotes initiatives in experimental archaeology and scientific outreach that integrate heritage, landscape, and environmental sustainability.'
-                                : 'Director de Pedra Tallada, impulsa además iniciativas de arqueología experimental y divulgación científica que integran patrimonio, paisaje y sostenibilidad ambiental.'}
+                                ? <Fragment>Director of Pedra Tallada, he also promotes <a href={instagramUrl} target="_blank" rel="noopener noreferrer" class={inlineLinkClass}>initiatives in experimental archaeology and scientific outreach</a> that integrate heritage, landscape, and environmental sustainability.</Fragment>
+                                : <Fragment>Director de Pedra Tallada, impulsa además <a href={instagramUrl} target="_blank" rel="noopener noreferrer" class={inlineLinkClass}>iniciativas de arqueología experimental y divulgación científica</a> que integran patrimonio, paisaje y sostenibilidad ambiental.</Fragment>}
                         </p>
 					</div>
+					<ul class="mt-6 flex flex-wrap gap-2">
+						{profileLinks.map((link) => (
+							<li>
+								<a href={link.href} target="_blank" rel="noopener noreferrer" class="inline-block px-4 py-1.5 rounded-full border border-stone-200 bg-stone-50 text-sm font-semibold text-stone-700 hover:bg-clay-dark hover:text-white hover:border-clay-dark transition-colors">
+									{link.label}
+								</a>
+							</li>
+						))}
+					</ul>
 				</div>
 			</div>
 		</div>
